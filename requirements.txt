@@ -1,0 +1,10 @@
+asgiref==3.2.7
+Django==3.0.6
+django-cors-headers==3.3.0
+djangorestframework==3.11.0
+djangorestframework-jwt==1.11.0
+djangorestframework-simplejwt==4.4.0
+psycopg2==2.8.5
+PyJWT==1.7.1
+pytz==2020.1
+sqlparse==0.3.1
