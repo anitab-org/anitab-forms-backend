@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "3e9d68ee-c957-4488-b5d4-cf65db46961c",
+		"name": "OSP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"item": [
+				{
+					"name": "Register User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7f93d2c-9352-49fa-b97a-c9299fc0e631",
+								"exec": [
+									"if (pm.request.method === 'POST') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"    })   ",
+									"}",
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"username\":\"user3ee4\",\n\"email\":\"hello554eeu@gmail.com\",\n\"password\":\"password123\",\n\"password2\":\"passwod123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/token_auth/register/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token_auth",
+								"register",
+								""
+							]
+						},
+						"description": "POST request for SignUp/Register of New Users."
+					},
+					"response": [
+						{
+							"name": "Register User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"username\":\"user3\",\n\"email\":\"hello555@gmail.com\",\n\"password\":\"password123\",\n\"password2\":\"password123\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/token_auth/register/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"token_auth",
+										"register",
+										""
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 04 Jun 2020 22:06:23 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.6.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Origin, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "OPTIONS, POST"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "438"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU5MzkwMDM4MywianRpIjoiMzk2M2RkOGI0ZDY5NGYwMThiZTY5OThhZjBlMTljZDgiLCJ1c2VyX2lkIjo1fQ.51otWTDmuSzv0kcCGg9amU6-itDcAsEQq0iG7IMNrwM\",\n    \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkxNDgxMTgzLCJqdGkiOiJiZWNhZTUyMzI1ZGI0NjM2YTkxZDVlM2ZiMTUyZjMzYyIsInVzZXJfaWQiOjV9.YYQ89Y3ji43aiXm3z8sAvzCzmmGHflwhCQtXI-B_dE4\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "130feb87-47e2-4e5c-89fa-8f1e4f48a7b7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b2f7507a-93a3-4ae6-bce2-afb942b62c50",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "119b5877-1ed6-4703-82b4-5cdaa6e5c03d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "21f71360-bc39-4e8b-b3c5-eae05d7a3b50",
+				"type": "text/javascript",
+				"exec": [
+					"// if (pm.request.method === 'POST') {",
+					"//     pm.test(\"Status code\", function() {",
+					"//         pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+					"//     })   ",
+					"// }",
+					"// if (pm.request.method === 'GET') {",
+					"//     pm.test(\"Status code\", function() {",
+					"//         pm.expect(pm.response.code).to.be.oneOf([200]);",
+					"//     })",
+					"// }",
+					"// pm.test(\"Content-Type is present\", function () {",
+					"//     pm.response.to.have.header(\"Content-Type\");",
+					"// });"
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
