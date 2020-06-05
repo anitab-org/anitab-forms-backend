@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    # 'osp',
-    # 'token_auth'
+    'osp',
+    'token_auth'
 ]
 
 MIDDLEWARE = [
@@ -91,6 +91,8 @@ CORS_ORIGIN_WHITELIST = [
     'http://127.0.0.1:3000',
     'http://localhost:3000',
 ]
+
+AUTH_USER_MODEL = 'token_auth.User'
 
 WSGI_APPLICATION = 'main.wsgi.application'
 
