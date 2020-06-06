@@ -1,0 +1,15 @@
+language: python
+services: 
+- postgresql
+
+install:
+- pip install -r requirements.txt
+- nvm install v10.0.0
+- npm install newman
+
+before_script:
+- node --version
+- node_modules/.bin/newman --version
+
+script:
+- node_modules/.bin/newman run docs/OSP.postman_collection.json
