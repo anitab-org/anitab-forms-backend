@@ -6,6 +6,7 @@ from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 
 from rest_framework import status
+from rest_framework.decorators import api_view
 from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -34,27 +35,26 @@ class RegisterView(APIView):
         # Send Email for confirmation
         send_mail(
             'Confirmation Email',
-            f'localhost:3000/{urlsafe_base64_encode(force_bytes(user.pk))}',
-            'osp@anitab.org',
+            f'Please click on the link to confirm the link: http://localhost:3000/{urlsafe_base64_encode(force_bytes(user.pk))}/{account_activation_token.make_token(user)}',
+            'AnitaB Open Source <opensource@anitab.org>',
             [request.data['email']],
             fail_silently=False,
         )
         return Response({"Please confirm your email to Login succesfully"}, status.HTTP_201_CREATED)
 
-
-    def activate(self):
+    @api_view(('GET',))
+    def activate(request, uidb64, token):
         """
         Function for account activation
         """
 
         try:
-            user_id = self.kwargs.get('user_id')
-            uid = force_text(urlsafe_base64_decode(user_id))
+            uid = force_text(urlsafe_base64_decode(uidb64))
             user = User.objects.get(pk=uid)
         except(TypeError, ValueError, OverflowError, User.DoesNotExist):
             user = None
         
-        if user:
+        if user is not None and account_activation_token.check_token(user, token):
             user.is_active = True
             user.save()
             return Response({"Your email is confirmed!"}, status=status.HTTP_200_OK)
