@@ -32,29 +32,29 @@ class RegisterView(APIView):
         user = serializer.save()
 
         # Send Email for confirmation
-        current_site = get_current_site(request)
         send_mail(
             'Confirmation Email',
-            f'{current_site.domain}: {urlsafe_base64_encode(force_bytes(user.pk))}: {account_activation_token.make_token(user)}',
-            'bg566528@gmail.com',
+            f'localhost:3000/{urlsafe_base64_encode(force_bytes(user.pk))}',
+            'osp@anitab.org',
             [request.data['email']],
             fail_silently=False,
         )
         return Response({"Please confirm your email to Login succesfully"}, status.HTTP_201_CREATED)
 
 
-    def activate(request, uidb64, token):
+    def activate(self):
         """
         Function for account activation
         """
 
         try:
-            uid = force_text(urlsafe_base64_decode(uidb64))
+            user_id = self.kwargs.get('user_id')
+            uid = force_text(urlsafe_base64_decode(user_id))
             user = User.objects.get(pk=uid)
         except(TypeError, ValueError, OverflowError, User.DoesNotExist):
             user = None
         
-        if user is not None and account_activation_token.check_token(user, token):
+        if user:
             user.is_active = True
             user.save()
             return Response({"Your email is confirmed!"}, status=status.HTTP_200_OK)
