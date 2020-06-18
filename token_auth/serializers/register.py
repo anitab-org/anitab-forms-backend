@@ -37,7 +37,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         if password != confirm_password:
             raise serializers.ValidationError("The two passwords differ.")
 
-        user = User(username=username, email=email)
+        user = User(username=username, email=email, is_active=False)
         user.set_password(password)
         user.save()
 

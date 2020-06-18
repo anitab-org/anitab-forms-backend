@@ -53,7 +53,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\"username\":\"user3ee4\",\n\"email\":\"hello554eeu@gmail.com\",\n\"password\":\"password123\",\n\"password2\":\"passwod123\"\n}"
+							"raw": "{\n\"username\":\"newuser2\",\n\"email\":\"newuser2@gmail.com\",\n\"password\":\"hello\",\n\"confirm_password\":\"hello\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8000/api/token_auth/register/",
@@ -69,87 +69,73 @@
 								""
 							]
 						},
-						"description": "POST request for SignUp/Register of New Users."
+						"description": "API endpoint for user registration"
 					},
-					"response": [
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
 						{
-							"name": "Register User",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
+							"listen": "test",
+							"script": {
+								"id": "b7f93d2c-9352-49fa-b97a-c9299fc0e631",
+								"exec": [
+									"if (pm.request.method === 'POST') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200, 401]);",
+									"    })   ",
+									"}",
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\"username\":\"user3\",\n\"email\":\"hello555@gmail.com\",\n\"password\":\"password123\",\n\"password2\":\"password123\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost:8000/api/token_auth/register/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"token_auth",
-										"register",
-										""
-									],
-									"query": [
-										{
-											"key": "",
-											"value": "",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Date",
-									"value": "Thu, 04 Jun 2020 22:06:23 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "WSGIServer/0.2 CPython/3.6.9"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Vary",
-									"value": "Accept, Origin, Cookie"
-								},
-								{
-									"key": "Allow",
-									"value": "OPTIONS, POST"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Content-Length",
-									"value": "438"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU5MzkwMDM4MywianRpIjoiMzk2M2RkOGI0ZDY5NGYwMThiZTY5OThhZjBlMTljZDgiLCJ1c2VyX2lkIjo1fQ.51otWTDmuSzv0kcCGg9amU6-itDcAsEQq0iG7IMNrwM\",\n    \"access\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkxNDgxMTgzLCJqdGkiOiJiZWNhZTUyMzI1ZGI0NjM2YTkxZDVlM2ZiMTUyZjMzYyIsInVzZXJfaWQiOjV9.YYQ89Y3ji43aiXm3z8sAvzCzmmGHflwhCQtXI-B_dE4\"\n}"
+								"type": "text/javascript"
+							}
 						}
-					]
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"username\":\"admin\",\n\"password\":\"pass\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/token_auth/token/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token_auth",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"event": [
@@ -172,6 +158,216 @@
 							""
 						]
 					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Information",
+			"item": [
+				{
+					"name": "User Information",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4abde703-8f89-43a3-bb69-3b09500ea784",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "13f020b3-438a-4340-b4e1-9057e092c899",
+								"exec": [
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkxODkxNTEwLCJqdGkiOiJlNWI5MThiMmQ3NGQ0ZGJhODEyYjg2M2M3YzRkNDAyYyIsInVzZXJfaWQiOjF9.xuNDcOibIWtsVnnVaD7XhQuJ_Qqy0hWa3FX1sn7S7kk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Information",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b342768a-c60a-42af-b415-f8325dd25f88",
+								"exec": [
+									"if (pm.request.method === 'POST') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([201, 409]);",
+									"    })",
+									"}",
+									"",
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkxODkxNTEwLCJqdGkiOiJlNWI5MThiMmQ3NGQ0ZGJhODEyYjg2M2M3YzRkNDAyYyIsInVzZXJfaWQiOjF9.xuNDcOibIWtsVnnVaD7XhQuJ_Qqy0hWa3FX1sn7S7kk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Hello\",\n    \"user_type\":\"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/info/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"info",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a38b2b77-bbef-418b-8be8-5a56d26f425d",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "0068f2e9-ea9c-41df-9232-8d86a069ec25",
+								"exec": [
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkxODkxNTEwLCJqdGkiOiJlNWI5MThiMmQ3NGQ0ZGJhODEyYjg2M2M3YzRkNDAyYyIsInVzZXJfaWQiOjF9.xuNDcOibIWtsVnnVaD7XhQuJ_Qqy0hWa3FX1sn7S7kk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -213,3 +409,4 @@
 	],
 	"protocolProfileBehavior": {}
 }
+

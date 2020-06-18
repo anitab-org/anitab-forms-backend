@@ -19,6 +19,7 @@ class UserInformation(models.Model):
     user_type = models.CharField(
         max_length=7,
         choices=USER,
+        default='student'
     )
 
     def __str__(self):
