@@ -4,6 +4,7 @@ Open Source Programs (OSP) is an application that simplifies the processing and 
 ## Tech Stack
 - Django 3.0.7
 - Django REST Framework 3.11.0
+- Python 3.7+
 
 ## Setup 
 To setup the project locally go through [this wiki page](https://github.com/anitab-org/open-source-programs-web/wiki/Fork,-Clone,-Remote-and-Pull-Request).
