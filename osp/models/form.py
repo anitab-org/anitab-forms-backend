@@ -1,7 +1,7 @@
 from django.db import models
 
-from osp.models.question import Question
-from osp.models.abstract_timestamp import AbstractTimestamp
+from osp.models.utils.question import Question
+from osp.models.utils.abstract_timestamp import AbstractTimestamp
 
 ALL = 'all'
 ADM = 'admin'
@@ -14,21 +14,9 @@ TARGET_USER = (
 
 class Form(AbstractTimestamp):
 
-    name = models.CharField(
-        max_length=255
-    )
-    description = models.TextField(
-        blank=True
-    )
-    created_on = models.DateTimeField(
-        auto_now_add=True
-    )
-    updated_on = models.DateTimeField(
-        auto_now=True
-    )
-    published_status = models.BooleanField(
-        default=False
-    )
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    published_status = models.BooleanField(default=False)
     form_fields = models.ManyToManyField(
         to=Question,
         default=None,

@@ -1,6 +1,6 @@
 from django.db import models
 
-from osp.models.abstract_timestamp import AbstractTimestamp
+from osp.models.utils.abstract_timestamp import AbstractTimestamp
 
 SA = 'char'
 PA = 'text'
@@ -26,7 +26,8 @@ class Question(AbstractTimestamp):
     label = models.CharField(max_length=255)
     data_type = models.CharField(
         max_length=8,
-        choices=DATA_TYPE
+        choices=DATA_TYPE,
+        default='char'
     )
     description = models.TextField(blank=True)
     order = models.PositiveIntegerField()
