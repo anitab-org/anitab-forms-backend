@@ -7,7 +7,7 @@ Open Source Programs (OSP) is an application that simplifies the processing and 
 - Python 3.7+
 
 ## API Documentation
-- [Postman Docs](https://documenter.getpostman.com/view/11324046/Szzoaw1q?version=latest#1fbeb4c3-5540-40a8-b205-380ca7232c59)
+- [Postman Docs](https://documenter.getpostman.com/view/11324046/Szzoaw1q?version=latest)
 
 ## Setup 
 To setup the project locally go through [this wiki page](https://github.com/anitab-org/open-source-programs-web/wiki/Fork,-Clone,-Remote-and-Pull-Request).
