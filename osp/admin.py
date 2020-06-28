@@ -1,7 +1,15 @@
 from django.contrib import admin
 
-from osp.models import *
+from osp.models import (
+    UserInformation, Form, Question, Choice,
+    Checkbox, Dropdown, Paragraph, ShortAnswer,
+    Date, Time, FileUpload
+)
 
-admin.site.register(UserInformation)
-# admin.site.register(Form)
-# admin.site.register(Question)
+models = [
+    UserInformation, Form, Question, Choice,
+    Checkbox, Dropdown, Paragraph, ShortAnswer,
+    Date, Time, FileUpload
+]
+
+admin.site.register(models)
