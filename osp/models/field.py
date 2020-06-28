@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 
-from osp.models.utils.question import Question
+from osp.models.question import Question
 
 class Choice(Question):
     
@@ -12,7 +12,6 @@ class Choice(Question):
         ))
 
     def __str__(self):
-
         return f'{self.label}'
 
 class Dropdown(Question):
@@ -24,7 +23,6 @@ class Dropdown(Question):
         ))
 
     def __str__(self):
-
         return '{self.label}'
 
 class Checkbox(Question):
@@ -36,40 +34,29 @@ class Checkbox(Question):
         ))
 
     def __str__(self):
-
         return '{self.label}'
 
 class Paragraph(Question):
-    pass
 
     def __str__(self):
-
         return '{self.label}'
 
 class ShortAnswer(Question):
-    pass
 
     def __str__(self):
-
         return '{self.label}'
 
 class Date(Question):
-    pass
 
     def __str__(self):
-
         return '{self.label}'
 
 class Time(Question):
-    pass
 
     def __str__(self):
-
         return '{self.label}'
 
 class FileUpload(Question):
-    pass
 
     def __str__(self):
-
         return '{self.label}'

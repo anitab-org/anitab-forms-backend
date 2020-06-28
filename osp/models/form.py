@@ -1,16 +1,8 @@
 from django.db import models
 
-from osp.models.utils.question import Question
-from osp.models.utils.abstract_timestamp import AbstractTimestamp
-
-ALL = 'all'
-ADM = 'admin'
-STU = 'student'
-TARGET_USER = (
-    (ALL, 'All Users'),
-    (ADM, 'Admin'),
-    (STU, 'Student'),
-)
+from osp.models.question import Question
+from osp.models.abstract_timestamp import AbstractTimestamp
+from osp.utils import target_user_types
 
 class Form(AbstractTimestamp):
 
@@ -24,10 +16,9 @@ class Form(AbstractTimestamp):
     )
     target_user = models.CharField(
         max_length=7,
-        choices=TARGET_USER,
+        choices=target_user_types.TARGET_USERS,
         default='all'
     )
 
     def __str__(self):
-
         return f'{self.name}'
