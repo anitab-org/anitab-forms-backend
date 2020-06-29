@@ -1,0 +1,15 @@
+from rest_framework import viewsets, status
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+
+from osp.models import Form
+from osp.serializers.form import FormSerializer
+
+class UnpublishedFormView(viewsets.ModelViewSet):
+
+    permission_classes = [IsAuthenticated]
+    serializer_class = FormSerializer
+
+    def get_queryset(self):
+        queryset = Form.objects.filter(published_status=False)
+        return queryset
