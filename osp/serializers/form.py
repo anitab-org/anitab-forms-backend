@@ -12,5 +12,7 @@ class FormSerializer(serializers.ModelSerializer):
             'description',
             'published_status',
             'form_fields',
-            'target_user'
+            'target_user',
+            'created_on',
+            'updated_on'
         ]

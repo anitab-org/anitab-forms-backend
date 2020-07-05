@@ -21,5 +21,5 @@ class FormView(viewsets.ModelViewSet):
 
     def get_queryset(self):
         status = self.request.query_params.get('status', None)
-        queryset = Form.objects.filter(published_status=status)
+        queryset = Form.objects.filter(published_status=status).order_by('-created_on')
         return queryset

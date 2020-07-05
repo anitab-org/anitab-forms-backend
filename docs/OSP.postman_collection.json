@@ -412,7 +412,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzNzIxNTEyLCJqdGkiOiJkMzQ3NDI3NzAzNjQ0NzJiOWM3ZDRiYWRiMGZjM2MwYyIsInVzZXJfaWQiOjF9.hHeWkLRUZcgBkc9wXnB6X2LhGRyLIzq5MgCljKbAPD4",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk0MTI2Mzc0LCJqdGkiOiI2ZjVhNzk0MjUxYTk0NmM2YjAxODA2MTVhMGExZmNkMSIsInVzZXJfaWQiOjF9.aNFv5k8LuP2tUTnz7NIPImr3bDGAeugvLoPgKb-p8QE",
 									"type": "string"
 								}
 							]
@@ -427,7 +427,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "[\n    {\n        \"label\": \"holaaa\",\n        \"description\": \"\",\n        \"data_type\": \"text\",\n        \"order\": 7,\n        \"required\": true\n    },\n    {\n        \"label\": \"hollalalallalaaaaaaaaaa\",\n        \"description\": \"\",\n        \"data_type\": \"char\",\n        \"order\": 7,\n        \"required\": false\n    },\n    {\n        \"label\": \"hola uyryei aa\",\n        \"description\": \"poiuytredgh98765r\",\n        \"data_type\": \"text\",\n        \"order\": 7,\n        \"required\": true\n    }\n]"
+							"raw": "[\n    {\n        \"label\": \"holaaa\",\n        \"description\": \"\",\n        \"data_type\": \"text\",\n        \"order\": 19,\n        \"required\": true\n    },\n    {\n        \"label\": \"hollalalallalaaaaaaaaaa\",\n        \"description\": \"\",\n        \"data_type\": \"char\",\n        \"order\": 11,\n        \"required\": false\n    },\n    {\n        \"id\": 20,\n        \"label\": \"hola uyryei aa\",\n        \"data_type\": \"text\",\n        \"description\": \"poiuytredgh98765r\",\n        \"order\": 14,\n        \"required\": true\n    },\n    {\n        \"label\": \"hola uyryei aa\",\n        \"description\": \"poiuytredgh98765r\",\n        \"data_type\": \"checkbox\",\n        \"order\": 12,\n        \"required\": true,\n        \"options\": [\"new\", \"new23\", \"one\", \"two\"]\n    }\n]"
 						},
 						"url": {
 							"raw": "http://localhost:8000/api/questions/?form_id=1",
@@ -716,6 +716,88 @@
 								"api",
 								"form",
 								"2",
+								""
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "False"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Form",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7f93d2c-9352-49fa-b97a-c9299fc0e631",
+								"exec": [
+									"if (pm.request.method === 'POST') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"    })   ",
+									"}",
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"if (pm.request.method === 'DELETE') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([204]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzOTkxODgwLCJqdGkiOiI1NTkyZDYyMjgzYTM0M2NiYThmMjcyMmQ0ZDQ1M2YxNCIsInVzZXJfaWQiOjF9.jhfdaXoNHTgkfUTcllxDIJeS3Zphv175obKuEcQksjU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/form/4/?status=False",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"form",
+								"4",
 								""
 							],
 							"query": [
