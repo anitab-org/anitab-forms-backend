@@ -6,58 +6,58 @@ from osp.models import (
 )
 from osp.serializers.question import QuestionSerializer
 
-class ChoiceSerializer(serializers.ModelSerializer):
+class ChoiceSerializer(QuestionSerializer):
 
-    class Meta(QuestionSerializer):
-
-        model = Choice
-        fields = QuestionSerializer.Meta.fields + ['options']
-
-class CheckboxSerializer(serializers.ModelSerializer):
-
-    class Meta(QuestionSerializer):
+    class Meta:
 
         model = Choice
         fields = QuestionSerializer.Meta.fields + ['options']
 
-class DropdownSerializer(serializers.ModelSerializer):
+class CheckboxSerializer(QuestionSerializer):
 
-    class Meta(QuestionSerializer):
+    class Meta:
 
-        model = Choice
+        model = Checkbox
         fields = QuestionSerializer.Meta.fields + ['options']
 
-class ParagraphSerializer(serializers.ModelSerializer):
+class DropdownSerializer(QuestionSerializer):
 
-    class Meta(QuestionSerializer):
+    class Meta:
 
-        model = Choice
+        model = Dropdown
+        fields = QuestionSerializer.Meta.fields + ['options']
+
+class ParagraphSerializer(QuestionSerializer):
+
+    class Meta:
+
+        model = Paragraph
         fields = QuestionSerializer.Meta.fields
 
-class ShortAnswerSerializer(serializers.ModelSerializer):
+class ShortAnswerSerializer(QuestionSerializer):
 
-    class Meta(QuestionSerializer):
+    class Meta:
 
-        model = Choice
+        model = ShortAnswer
         fields = QuestionSerializer.Meta.fields
 
-class DateSerializer(serializers.ModelSerializer):
+class DateSerializer(QuestionSerializer):
 
-    class Meta(QuestionSerializer):
+    class Meta:
 
-        model = Choice
+        model = Date
         fields = QuestionSerializer.Meta.fields
 
-class TimeSerializer(serializers.ModelSerializer):
+class TimeSerializer(QuestionSerializer):
 
-    class Meta(QuestionSerializer):
+    class Meta:
 
-        model = Choice
+        model = Time
         fields = QuestionSerializer.Meta.fields
 
-class FileUploadSerializer(serializers.ModelSerializer):
+class FileUploadSerializer(QuestionSerializer):
 
-    class Meta(QuestionSerializer):
+    class Meta:
 
-        model = Choice
+        model = FileUpload
         fields = QuestionSerializer.Meta.fields

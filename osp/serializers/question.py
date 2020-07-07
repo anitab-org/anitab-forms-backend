@@ -8,12 +8,7 @@ class QuestionSerializer(serializers.ModelSerializer):
 
         model = Question
         fields = [
-            'id',
-            'label',
-            'data_type',
-            'description',
-            'order',
-            'required',
-            'created_on',
-            'updated_on'
+            'id', 'label', 'data_type',
+            'description', 'order', 'required',
+            'created_on', 'updated_on'
         ]

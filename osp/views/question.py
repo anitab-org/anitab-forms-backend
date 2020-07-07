@@ -34,7 +34,7 @@ class QuestionView(viewsets.ViewSet):
     def list(self, request):
         form_id = self.request.query_params.get('form_id', None)
         fields = Form.objects.filter(id=form_id).values_list('form_fields', flat=True)
-        objs = Question.objects.filter(id__in=fields).order_by('order')
+        objs = Question.objects.filter(id__in=fields)
         results = []
 
         for obj in objs:
@@ -45,7 +45,7 @@ class QuestionView(viewsets.ViewSet):
             results.append(serializer(instance).data)
             
         #response
-        return Response(results)
+        return Response(results, status=status.HTTP_200_OK)
 
 
     # POST request
@@ -64,7 +64,6 @@ class QuestionView(viewsets.ViewSet):
                 instance = model.objects.get(id=id)
             else:
                 instance = model.objects.create(**obj)
-            print(instance)
             results.append(serializer(instance).data)
             form.form_fields.add(instance)
 

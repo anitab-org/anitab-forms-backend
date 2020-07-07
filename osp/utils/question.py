@@ -45,6 +45,6 @@ def get_model_and_serializer(data_type):
         serializer = FileUploadSerializer
 
     return {
-        'model': model,
-        'serializer': serializer
+        "model": model,
+        "serializer": serializer
     }
