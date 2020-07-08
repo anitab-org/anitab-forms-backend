@@ -371,6 +371,447 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Questions",
+			"item": [
+				{
+					"name": "Create new fields for a form",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7f93d2c-9352-49fa-b97a-c9299fc0e631",
+								"exec": [
+									"if (pm.request.method === 'POST') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"    })   ",
+									"}",
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk0NDAyNTMwLCJqdGkiOiIwZDMzMTJiZmRiZTU0MTIyOGRkZTQ3ZGIyNDMwYjliNSIsInVzZXJfaWQiOjF9.AIwwv0Af50Oc6amS79APaIxas_i8JjQ_6CkJEo-2wsQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"id\": 87,\n        \"label\": \"hola uyrsayei aa\",\n        \"description\": \"poiuytredgh98765r\",\n        \"data_type\": \"checkbox\",\n        \"order\": 1,\n        \"required\": false,\n        \"options\": [\"new\", \"new09\", \"new6783\", \"abccc\"],\n        \"forms\": [16]\n    },\n    {\n        \"label\": \"hola uyrsayeiaa ded89ay\",\n        \"description\": \"\",\n        \"data_type\": \"dropdown\",\n        \"order\": 2,\n        \"required\": false,\n        \"options\": [\"new\", \"new09\", \"new6783\", \"blalala\"],\n        \"forms\": [16]\n    },\n    {\n        \"label\": \"holaa\",\n        \"description\": \"poiuytrh98765r\",\n        \"data_type\": \"text\",\n        \"order\": 3,\n        \"required\": true,\n        \"forms\": [16]\n    }\n]"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/questions/?form_id=16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"questions",
+								""
+							],
+							"query": [
+								{
+									"key": "form_id",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all fields of a specific form",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7f93d2c-9352-49fa-b97a-c9299fc0e631",
+								"exec": [
+									"if (pm.request.method === 'POST') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"    })   ",
+									"}",
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzNzIxNTEyLCJqdGkiOiJkMzQ3NDI3NzAzNjQ0NzJiOWM3ZDRiYWRiMGZjM2MwYyIsInVzZXJfaWQiOjF9.hHeWkLRUZcgBkc9wXnB6X2LhGRyLIzq5MgCljKbAPD4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"label\": \"holaaa\",\n        \"description\": \"\",\n        \"data_type\": \"text\",\n        \"order\": 7,\n        \"required\": true\n    },\n    {\n        \"label\": \"hollalalallalaaaaaaaaaa\",\n        \"description\": \"\",\n        \"data_type\": \"char\",\n        \"order\": 7,\n        \"required\": false\n    },\n    {\n        \"label\": \"hola uyryei aa\",\n        \"description\": \"poiuytredgh98765r\",\n        \"data_type\": \"text\",\n        \"order\": 7,\n        \"required\": true\n    }\n]"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/questions/?form_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"questions",
+								""
+							],
+							"query": [
+								{
+									"key": "form_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Form",
+			"item": [
+				{
+					"name": "Create a Form",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzNzIxNTEyLCJqdGkiOiJkMzQ3NDI3NzAzNjQ0NzJiOWM3ZDRiYWRiMGZjM2MwYyIsInVzZXJfaWQiOjF9.hHeWkLRUZcgBkc9wXnB6X2LhGRyLIzq5MgCljKbAPD4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"new form 2\",\n    \"description\": \"this is a nice description\",\n    \"target_user\": \"all\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/form/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"form",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get forms list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7f93d2c-9352-49fa-b97a-c9299fc0e631",
+								"exec": [
+									"if (pm.request.method === 'POST') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"    })   ",
+									"}",
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzNzIxNTEyLCJqdGkiOiJkMzQ3NDI3NzAzNjQ0NzJiOWM3ZDRiYWRiMGZjM2MwYyIsInVzZXJfaWQiOjF9.hHeWkLRUZcgBkc9wXnB6X2LhGRyLIzq5MgCljKbAPD4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/form/?status=False",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"form",
+								""
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "False"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a form",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7f93d2c-9352-49fa-b97a-c9299fc0e631",
+								"exec": [
+									"if (pm.request.method === 'POST') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"    })   ",
+									"}",
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzNzIxNTEyLCJqdGkiOiJkMzQ3NDI3NzAzNjQ0NzJiOWM3ZDRiYWRiMGZjM2MwYyIsInVzZXJfaWQiOjF9.hHeWkLRUZcgBkc9wXnB6X2LhGRyLIzq5MgCljKbAPD4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"change name\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/form/2/?status=False",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"form",
+								"2",
+								""
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "False"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Form",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7f93d2c-9352-49fa-b97a-c9299fc0e631",
+								"exec": [
+									"if (pm.request.method === 'POST') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"    })   ",
+									"}",
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"if (pm.request.method === 'DELETE') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([204]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzOTkxODgwLCJqdGkiOiI1NTkyZDYyMjgzYTM0M2NiYThmMjcyMmQ0ZDQ1M2YxNCIsInVzZXJfaWQiOjF9.jhfdaXoNHTgkfUTcllxDIJeS3Zphv175obKuEcQksjU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/form/4/?status=False",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"form",
+								"4",
+								""
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "False"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
@@ -409,4 +850,3 @@
 	],
 	"protocolProfileBehavior": {}
 }
-

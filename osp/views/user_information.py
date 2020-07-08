@@ -2,7 +2,7 @@ from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from osp.models.user_information import UserInformation
+from osp.models import UserInformation
 from osp.serializers.user_information import UserInformationSerializer
 
 class UserInformationView(viewsets.ModelViewSet):

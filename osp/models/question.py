@@ -14,3 +14,7 @@ class Question(AbstractTimestamp):
     description = models.TextField(blank=True)
     order = models.PositiveIntegerField()
     required = models.BooleanField(default=False)
+
+    class Meta:
+
+        ordering = ['order']

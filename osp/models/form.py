@@ -9,16 +9,21 @@ class Form(AbstractTimestamp):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     published_status = models.BooleanField(default=False)
-    form_fields = models.ManyToManyField(
+    questions = models.ManyToManyField(
         to=Question,
         default=None,
         blank=True,
+        related_name='forms'
     )
     target_user = models.CharField(
         max_length=7,
         choices=target_user_types.TARGET_USERS,
         default='all'
     )
+
+    class Meta:
+
+        ordering = ['-created_on']
 
     def __str__(self):
         return f'{self.name}'

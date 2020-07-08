@@ -12,7 +12,7 @@ class Choice(Question):
         ))
 
     def __str__(self):
-        return f'{self.label}'
+        return self.label
 
 class Dropdown(Question):
     
@@ -23,7 +23,7 @@ class Dropdown(Question):
         ))
 
     def __str__(self):
-        return '{self.label}'
+        return self.label
 
 class Checkbox(Question):
     
@@ -34,29 +34,29 @@ class Checkbox(Question):
         ))
 
     def __str__(self):
-        return '{self.label}'
+        return self.label
 
 class Paragraph(Question):
 
     def __str__(self):
-        return '{self.label}'
+        return self.label
 
 class ShortAnswer(Question):
 
     def __str__(self):
-        return '{self.label}'
+        return self.label
 
 class Date(Question):
 
     def __str__(self):
-        return '{self.label}'
+        return self.label
 
 class Time(Question):
 
     def __str__(self):
-        return '{self.label}'
+        return self.label
 
 class FileUpload(Question):
 
     def __str__(self):
-        return '{self.label}'
+        return self.label
