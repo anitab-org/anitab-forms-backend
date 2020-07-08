@@ -13,6 +13,7 @@ class Form(AbstractTimestamp):
         to=Question,
         default=None,
         blank=True,
+        related_name='form_fields'
     )
     target_user = models.CharField(
         max_length=7,

@@ -21,6 +21,12 @@ class FormView(viewsets.ModelViewSet):
         return super(FormView, self).get_permissions()
 
     def get_queryset(self):
+        queryset = self.queryset
         status = self.request.query_params.get('status', None)
-        queryset = self.queryset.filter(published_status=status)
+        user = self.request.user
+        user_type = UserInformation.objects.get(id=user.id).user_type
+        if status:
+            queryset = queryset.filter(published_status=status)
+        if user_type == 'student':
+            queryset = queryset.filter(published_status=True, target_user__in=['all', 'student'])
         return queryset

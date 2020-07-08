@@ -5,9 +5,9 @@ from osp.models import Form
 class FormSerializer(serializers.ModelSerializer):
 
     class Meta:
+        
         model = Form
         fields = [
-            'id', 'name', 'description',
-            'published_status', 'form_fields', 'target_user',
-            'created_on', 'updated_on'
+            'id', 'name', 'description', 'published_status',
+            'form_fields', 'target_user', 'created_on', 'updated_on'
         ]

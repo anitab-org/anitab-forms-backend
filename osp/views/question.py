@@ -19,6 +19,7 @@ from osp.utils.question import get_model_and_serializer
 class QuestionView(viewsets.ViewSet):
 
     serializer_class = QuestionSerializer
+    queryset = Question.objects.all()
 
     # override permissions for different request methods
     def get_permissions(self):
@@ -28,13 +29,17 @@ class QuestionView(viewsets.ViewSet):
             self.permission_classes = [IsAuthenticated, IsAdmin]
 
         return super(QuestionView, self).get_permissions()
-
+    
+    def get_queryset(self):
+        queryset = self.queryset
+        form_id = self.request.query_params.get('form_id', None)
+        if form_id:
+            queryset = queryset.filter(form_fields__id=form_id)
+        return queryset
     
     # GET request
     def list(self, request):
-        form_id = self.request.query_params.get('form_id', None)
-        fields = Form.objects.filter(id=form_id).values_list('form_fields', flat=True)
-        objs = Question.objects.filter(id__in=fields)
+        objs = self.get_queryset()
         results = []
 
         for obj in objs:
@@ -50,8 +55,6 @@ class QuestionView(viewsets.ViewSet):
 
     # POST request
     def create(self, request):
-        form_id = self.request.query_params.get('form_id', None)
-        form = Form.objects.get(id=form_id)
         results = []
 
         for obj in request.data:
@@ -60,12 +63,15 @@ class QuestionView(viewsets.ViewSet):
             serializer = value['serializer']
             id = obj.get('id', None)
             if id is not None:
-                model.objects.filter(id=id).update(**obj)
                 instance = model.objects.get(id=id)
+                instance = serializer(instance, data=obj)
+                instance.is_valid(raise_exception=True)
+                instance.save()
             else:
-                instance = model.objects.create(**obj)
-            results.append(serializer(instance).data)
-            form.form_fields.add(instance)
+                instance = serializer(data=obj)
+                instance.is_valid(raise_exception=True)
+                instance.save()
+            results.append(instance.data)
 
         # response
         return Response(results, status=status.HTTP_201_CREATED)
