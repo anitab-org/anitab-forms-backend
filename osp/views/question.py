@@ -34,7 +34,7 @@ class QuestionView(viewsets.ViewSet):
         queryset = self.queryset
         form_id = self.request.query_params.get('form_id', None)
         if form_id:
-            queryset = queryset.filter(form_fields__id=form_id)
+            queryset = queryset.filter(forms__id=form_id)
         return queryset
     
     # GET request

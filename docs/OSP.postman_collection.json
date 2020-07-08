@@ -412,7 +412,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk0MTI2Mzc0LCJqdGkiOiI2ZjVhNzk0MjUxYTk0NmM2YjAxODA2MTVhMGExZmNkMSIsInVzZXJfaWQiOjF9.aNFv5k8LuP2tUTnz7NIPImr3bDGAeugvLoPgKb-p8QE",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk0NDAyNTMwLCJqdGkiOiIwZDMzMTJiZmRiZTU0MTIyOGRkZTQ3ZGIyNDMwYjliNSIsInVzZXJfaWQiOjF9.AIwwv0Af50Oc6amS79APaIxas_i8JjQ_6CkJEo-2wsQ",
 									"type": "string"
 								}
 							]
@@ -427,10 +427,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "[\n    {\n        \"label\": \"holaaa\",\n        \"description\": \"\",\n        \"data_type\": \"text\",\n        \"order\": 19,\n        \"required\": true\n    },\n    {\n        \"label\": \"hollalalallalaaaaaaaaaa\",\n        \"description\": \"\",\n        \"data_type\": \"char\",\n        \"order\": 11,\n        \"required\": false\n    },\n    {\n        \"id\": 20,\n        \"label\": \"hola uyryei aa\",\n        \"data_type\": \"text\",\n        \"description\": \"poiuytredgh98765r\",\n        \"order\": 14,\n        \"required\": true\n    },\n    {\n        \"label\": \"hola uyryei aa\",\n        \"description\": \"poiuytredgh98765r\",\n        \"data_type\": \"checkbox\",\n        \"order\": 12,\n        \"required\": true,\n        \"options\": [\"new\", \"new23\", \"one\", \"two\"]\n    }\n]"
+							"raw": "[\n    {\n        \"id\": 87,\n        \"label\": \"hola uyrsayei aa\",\n        \"description\": \"poiuytredgh98765r\",\n        \"data_type\": \"checkbox\",\n        \"order\": 1,\n        \"required\": false,\n        \"options\": [\"new\", \"new09\", \"new6783\", \"abccc\"],\n        \"forms\": [16]\n    },\n    {\n        \"label\": \"hola uyrsayeiaa ded89ay\",\n        \"description\": \"\",\n        \"data_type\": \"dropdown\",\n        \"order\": 2,\n        \"required\": false,\n        \"options\": [\"new\", \"new09\", \"new6783\", \"blalala\"],\n        \"forms\": [16]\n    },\n    {\n        \"label\": \"holaa\",\n        \"description\": \"poiuytrh98765r\",\n        \"data_type\": \"text\",\n        \"order\": 3,\n        \"required\": true,\n        \"forms\": [16]\n    }\n]"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/questions/?form_id=1",
+							"raw": "http://localhost:8000/api/questions/?form_id=16",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -444,7 +444,7 @@
 							"query": [
 								{
 									"key": "form_id",
-									"value": "1"
+									"value": "16"
 								}
 							]
 						}
