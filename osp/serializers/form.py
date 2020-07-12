@@ -8,6 +8,6 @@ class FormSerializer(serializers.ModelSerializer):
         
         model = Form
         fields = [
-            'id', 'name', 'description', 'published_status',
+            'id', 'name', 'description', 'published_status', 'close',
             'questions', 'target_user', 'created_on', 'updated_on'
         ]

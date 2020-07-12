@@ -28,5 +28,5 @@ class FormView(viewsets.ModelViewSet):
         if status:
             queryset = queryset.filter(published_status=status)
         if user_type == 'student':
-            queryset = queryset.filter(published_status=True, target_user__in=['all', 'student'])
+            queryset = queryset.filter(published_status=True, close=False, target_user__in=['all', 'student'])
         return queryset

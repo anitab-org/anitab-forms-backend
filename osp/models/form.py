@@ -20,6 +20,7 @@ class Form(AbstractTimestamp):
         choices=target_user_types.TARGET_USERS,
         default='all'
     )
+    close = models.BooleanField(default=False)
 
     class Meta:
 
