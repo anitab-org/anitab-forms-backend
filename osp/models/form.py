@@ -2,7 +2,7 @@ from django.db import models
 
 from osp.models.question import Question
 from osp.models.abstract_timestamp import AbstractTimestamp
-from osp.utils import target_user_types, status_types
+from osp.utils import choices
 
 class Form(AbstractTimestamp):
 
@@ -10,7 +10,7 @@ class Form(AbstractTimestamp):
     description = models.TextField(blank=True)
     published_status = models.CharField(
         max_length=11,
-        choices=status_types.STATUS_TYPES,
+        choices=choices.STATUS_TYPES,
         default='unpublished'
     )
     questions = models.ManyToManyField(
@@ -21,7 +21,7 @@ class Form(AbstractTimestamp):
     )
     target_user = models.CharField(
         max_length=7,
-        choices=target_user_types.TARGET_USERS,
+        choices=choices.TARGET_USERS,
         default='all'
     )
 

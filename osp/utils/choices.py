@@ -16,3 +16,21 @@ DATA_TYPES = (
     (DA, 'Date'),
     (TI, 'Time')
 )
+
+PUB = 'published'
+UNP = 'unpublished'
+CLO = 'closed'
+STATUS_TYPES = (
+    (PUB, 'Published'),
+    (UNP, 'Unpublished'),
+    (CLO, 'Closed'),
+)
+
+ALL = 'all'
+ADM = 'admin'
+STU = 'student'
+TARGET_USERS = (
+    (ALL, 'All Users'),
+    (ADM, 'Admin'),
+    (STU, 'Student'),
+)

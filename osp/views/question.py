@@ -38,7 +38,7 @@ class QuestionView(viewsets.ViewSet):
         if form_id:
             queryset = queryset.filter(forms__id=form_id)
         if user_type == 'student':
-            queryset = queryset.filter(forms__published_status=True, forms__close=False)
+            queryset = queryset.filter(forms__published_status='published')
         return queryset
     
     # GET request

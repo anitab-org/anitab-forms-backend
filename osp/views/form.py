@@ -23,7 +23,6 @@ class FormView(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = self.queryset
         status = self.request.GET.getlist('status', None)
-        print(status)
         user = self.request.user
         user_type = UserInformation.objects.get(id=user.id).user_type
         if status:
