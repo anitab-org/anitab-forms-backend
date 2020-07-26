@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from osp.models import (
-    Form, Question, Choice,
+    UserInformation, Form, Question, Choice,
     Checkbox, Dropdown, Paragraph, ShortAnswer,
     Date, Time, FileUpload
 )
@@ -33,8 +33,12 @@ class QuestionView(viewsets.ViewSet):
     def get_queryset(self):
         queryset = self.queryset
         form_id = self.request.query_params.get('form_id', None)
+        user = self.request.user
+        user_type = UserInformation.objects.get(id=user.id).user_type
         if form_id:
             queryset = queryset.filter(forms__id=form_id)
+        if user_type == 'student':
+            queryset = queryset.filter(forms__published_status='published')
         return queryset
     
     # GET request
