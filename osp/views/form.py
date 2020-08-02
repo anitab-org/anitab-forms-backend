@@ -24,7 +24,11 @@ class FormView(viewsets.ModelViewSet):
         queryset = self.queryset
         status = self.request.query_params.get('status', None).split(',')
         user = self.request.user
-        user_type = UserInformation.objects.get(id=user.id).user_type
+        try:
+            user_type = UserInformation.objects.get(id=user.id).user_type
+        except UserInformation.DoesNotExist:
+            user_type = None
+        print(user_type)
         if status:
             queryset = queryset.filter(published_status__in=status)
         if user_type == 'student':
