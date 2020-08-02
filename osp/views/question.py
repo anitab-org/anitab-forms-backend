@@ -34,7 +34,7 @@ class QuestionView(viewsets.ViewSet):
         queryset = self.queryset
         form_id = self.request.query_params.get('form_id', None)
         user = self.request.user
-        user_type = UserInformation.objects.get(id=user.id).user_type
+        user_type = UserInformation.objects.get(user_id=user.id).user_type
         if form_id:
             queryset = queryset.filter(forms__id=form_id)
         if user_type == 'student':
