@@ -9,10 +9,16 @@ class UserInformationView(viewsets.ModelViewSet):
 
     permission_classes = [IsAuthenticated, ]
     serializer_class = UserInformationSerializer
+    queryset = UserInformation.objects.all()
 
     def get_queryset(self):
+        queryset = self.queryset
+        user_id = self.request.query_params.get('user_id', None)
         user = self.request.user
-        queryset = UserInformation.objects.filter(user_id=user.id)
+        if user_id is not None:
+            queryset = queryset.filter(user_id=user_id)
+        else:
+            queryset = queryset.filter(user_id=user.id)
         return queryset
 
     def create(self, request):
