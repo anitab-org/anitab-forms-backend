@@ -12,3 +12,4 @@ from osp.models.value import (
     ShortAnswerValue, DateValue, TimeValue, FileUploadValue
 )
 from osp.models.form_feedback import FormFeedback
+from osp.models.zulip_stat import ZulipStat

@@ -13,6 +13,7 @@ class UserInformationSerializer(serializers.ModelSerializer):
             'id',
             'name',
             'user',
-            'user_type'
+            'user_type',
+            'zulip_id'
         ]
 
