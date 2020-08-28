@@ -61,13 +61,13 @@ class FormFeedbackView(viewsets.ModelViewSet):
             answers.append(instance.data['id'])
 
         request.data['answers'] = answers  
-        instance = FormFeedback.objects.filter(user_id=user.id)
-        if instance.exists():
+        if FormFeedback.objects.filter(user_id=user.id).exists():
+            instance = FormFeedback.objects.get(user_id=user.id)
             serializer = FormFeedbackWriteSerializer(instance, data=request.data)
             serializer.is_valid(raise_exception=True)
             serializer.save()
         else:
-            serializer = FormFeedbackWriteSerializer(instance, data=request.data)
+            serializer = FormFeedbackWriteSerializer(data=request.data)
             serializer.is_valid(raise_exception=True)
             serializer.save(user_id=user.id)
 
