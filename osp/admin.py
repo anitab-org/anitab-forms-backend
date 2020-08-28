@@ -5,7 +5,7 @@ from osp.models import (
     Checkbox, Dropdown, Paragraph, ShortAnswer,
     Date, Time, FileUpload, Answer, ChoiceValue,
     CheckboxValue, DropdownValue, ParagraphValue, ShortAnswerValue,
-    DateValue, TimeValue, FileUploadValue, FormFeedback
+    DateValue, TimeValue, FileUploadValue, FormFeedback, ZulipStat
 )
 
 models = [
@@ -13,7 +13,7 @@ models = [
     Checkbox, Dropdown, Paragraph, ShortAnswer,
     Date, Time, FileUpload, Answer, ChoiceValue,
     CheckboxValue, DropdownValue, ParagraphValue, ShortAnswerValue,
-    DateValue, TimeValue, FileUploadValue, FormFeedback
+    DateValue, TimeValue, FileUploadValue, FormFeedback, ZulipStat
 ]
 
 admin.site.register(models)

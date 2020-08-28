@@ -8,6 +8,7 @@ from osp.views.form import FormView
 from osp.views.question import QuestionView
 from osp.views.answer import AnswerView
 from osp.views.form_feedback import FormFeedbackView
+from osp.views.zulip_stat import ZulipStatView
 
 router = routers.DefaultRouter()
 
@@ -17,6 +18,7 @@ router.register(r'form', FormView, basename='form')
 router.register(r'questions', QuestionView, basename='questions')
 router.register(r'answers', AnswerView, basename='answers')
 router.register(r'feedback', FormFeedbackView, basename='form_feedback')
+router.register(r'zulip_stat', ZulipStatView, basename='zulip_stat')
 
 urlpatterns = [
 ]

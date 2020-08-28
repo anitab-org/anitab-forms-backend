@@ -17,6 +17,9 @@ class UserInformation(models.Model):
         choices=user_types.USERS,
         default='student'
     )
+    zulip_id = models.BigIntegerField(
+        blank=True
+    )
 
     def __str__(self):
         return f'{self.name}: {self.user_type}'
