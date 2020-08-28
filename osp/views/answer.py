@@ -20,10 +20,13 @@ class AnswerView(viewsets.ModelViewSet):
         queryset = self.queryset
         form_id = self.request.query_params.get('form_id', None)
         question_id = self.request.query_params.get('question_id', None)
+        user_id = self.request.query_params.get('user_id', None)
         user = self.request.user
         if form_id is not None:
             queryset = queryset.filter(form_answers__form_id=form_id)
-        if user is not None:
+        if user_id is not None:
+            queryset = queryset.filter(form_answers__user_id=user_id)
+        else:
             queryset = queryset.filter(form_answers__user_id=user.id)
         if question_id is not None:
             queryset = queryset.filter(question_id=question_id)

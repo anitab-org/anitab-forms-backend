@@ -1,3 +1,4 @@
+from django.db.models import Q
 from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -19,10 +20,14 @@ class FormFeedbackView(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = self.queryset
         form_id = self.request.query_params.get('form_id', None)
+        user_name = self.request.query_params.get('user_name', None)
         user_id = self.request.query_params.get('user_id', None)
         user = self.request.user
         if form_id is not None:
-            queryset = queryset.filter(form_id=form_id)
+            form_id = form_id.split(',')
+            queryset = queryset.filter(form_id__in=form_id)
+        if user_name is not None:
+            queryset = queryset.filter(Q(user__user_name__name__icontains=user_name) | Q(user__username__icontains=user_name))
         if user_id is not None:
             queryset = queryset.filter(user_id=user_id)
         else:
