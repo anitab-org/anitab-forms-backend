@@ -812,6 +812,242 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Answers",
+			"item": [
+				{
+					"name": "List answers for a specific form and specific user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7f93d2c-9352-49fa-b97a-c9299fc0e631",
+								"exec": [
+									"if (pm.request.method === 'POST') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"    })   ",
+									"}",
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk2OTc4NDIxLCJqdGkiOiI0ZmEwMjQ2OWM0ZWE0YTFmOTA5ZWZhZjE2MzlmOGJiZSIsInVzZXJfaWQiOjF9.MRAbEnbr3VAYUyykLPX96W-U_g8hVp2WxFWGAM3zgnc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/answers/?form_id=47",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"answers",
+								""
+							],
+							"query": [
+								{
+									"key": "form_id",
+									"value": "47"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add answers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7f93d2c-9352-49fa-b97a-c9299fc0e631",
+								"exec": [
+									"if (pm.request.method === 'POST') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"    })   ",
+									"}",
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk2OTc4NDIxLCJqdGkiOiI0ZmEwMjQ2OWM0ZWE0YTFmOTA5ZWZhZjE2MzlmOGJiZSIsInVzZXJfaWQiOjF9.MRAbEnbr3VAYUyykLPX96W-U_g8hVp2WxFWGAM3zgnc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"form\": 48,\n    \"answers\": [{\n        \"question\": 10,\n        \"value\": \"newdfgdgf\"\n    }]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/feedback/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"feedback",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Form Feedback",
+			"item": [
+				{
+					"name": "Get list of form feedback",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7f93d2c-9352-49fa-b97a-c9299fc0e631",
+								"exec": [
+									"if (pm.request.method === 'POST') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"    })   ",
+									"}",
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk2OTc4NDIxLCJqdGkiOiI0ZmEwMjQ2OWM0ZWE0YTFmOTA5ZWZhZjE2MzlmOGJiZSIsInVzZXJfaWQiOjF9.MRAbEnbr3VAYUyykLPX96W-U_g8hVp2WxFWGAM3zgnc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"form\": 48,\n    \"answers\": [{\n        \"question\": 10,\n        \"value\": \"newdfgdgf\"\n    }]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/feedback/?form_id=48",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"feedback",
+								""
+							],
+							"query": [
+								{
+									"key": "form_id",
+									"value": "48"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [

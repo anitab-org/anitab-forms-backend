@@ -34,3 +34,14 @@ TARGET_USERS = (
     (ADM, 'Admin'),
     (STU, 'Student'),
 )
+
+ACC = 'accepted'
+REJ = 'rejected'
+WAI = 'waitlisted'
+PEN = 'pending'
+ACCEPTANCE_STATUSES = (
+    (ACC, 'Accepted'),
+    (REJ, 'Rejected'),
+    (WAI, 'Waitlisted'),
+    (PEN, 'Pending'),
+)

@@ -18,3 +18,6 @@ class Question(AbstractTimestamp):
     class Meta:
 
         ordering = ['order']
+    
+    def __str__(self):
+        return self.label
