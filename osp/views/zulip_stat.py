@@ -13,13 +13,11 @@ from osp.utils.zulip_api import get_zulip_user, get_messages, get_newest_message
 class ZulipStatView(viewsets.ModelViewSet):
 
     permission_classes = [IsAuthenticated,]
-    # serializer_class = ZulipStatSerializer
     queryset = ZulipStat.objects.all()
 
     def get_serializer_class(self):
         user = self.request.user
         user_type = UserInformation.objects.get(user=user.id).user_type
-        print(user_type)
         if user_type=='admin':
             self.serializer_class = ZulipStatSerializer
         else:
@@ -39,6 +37,7 @@ class ZulipStatView(viewsets.ModelViewSet):
     def create(self, request):
         user = self.request.user
         user_info = UserInformation.objects.get(user_id=user.id)
+        user_type = user_info.user_type
 
         # update on existing
         if ZulipStat.objects.filter(user_information__user_id=user.id).exists():
@@ -93,5 +92,10 @@ class ZulipStatView(viewsets.ModelViewSet):
             serializer = ZulipStatSerializer(data=request.data)
             serializer.is_valid(raise_exception=True)
             serializer.save(user_information_id=user_info.id)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        obj = ZulipStat.objects.get(id=serializer.data['id'])
+        self.get_serializer_class()
+
+        #response
+        return Response(self.serializer_class(obj).data, status=status.HTTP_201_CREATED)
         

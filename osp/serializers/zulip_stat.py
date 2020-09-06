@@ -13,7 +13,7 @@ class ZulipStatSerializer(serializers.ModelSerializer):
 
         model = ZulipStat
         fields = [
-            'zulip_user_id', 'zulip_username', 'total_messages', 'first_activity', 'last_activity',
-            'updated_on', 'newcomers_messages', 'general_messages', 'questions_messages',
-            'opportunities_messages', 'celebrate_messages'
+            'id', 'zulip_user_id', 'zulip_username', 'total_messages', 'first_activity',
+            'last_activity', 'updated_on', 'newcomers_messages', 'general_messages',
+            'questions_messages', 'opportunities_messages', 'celebrate_messages'
         ]

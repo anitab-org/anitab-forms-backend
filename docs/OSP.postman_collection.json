@@ -269,7 +269,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkxODkxNTEwLCJqdGkiOiJlNWI5MThiMmQ3NGQ0ZGJhODEyYjg2M2M3YzRkNDAyYyIsInVzZXJfaWQiOjF9.xuNDcOibIWtsVnnVaD7XhQuJ_Qqy0hWa3FX1sn7S7kk",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk4MjEzMzQ4LCJqdGkiOiI5ZTBlMzRhOTQ3YWU0ODU4OTJiZjIyM2IxOWFmNTk2ZSIsInVzZXJfaWQiOjF9.BA_rmP3NOQ-GXSLsnmejwz8RH3lUo-MxVXhrj5l5E5o",
 									"type": "string"
 								}
 							]
@@ -284,7 +284,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"Hello\",\n    \"user_type\":\"admin\"\n}"
+							"raw": "{\n    \"name\":\"Hello\",\n    \"user_type\":\"admin\",\n    \"zulip_id\": 270644\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8000/api/info/",
@@ -1041,6 +1041,153 @@
 									"key": "form_id",
 									"value": "48"
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ZulipStat",
+			"item": [
+				{
+					"name": "Get you Stats",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7f93d2c-9352-49fa-b97a-c9299fc0e631",
+								"exec": [
+									"if (pm.request.method === 'POST') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"    })   ",
+									"}",
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk5Mjc5NDMyLCJqdGkiOiI0YjRlNWRkNWYwOWY0ZDc0OWExNTY4YTI2ZDBjZWY4NSIsInVzZXJfaWQiOjF9.CbO0omlLHkcEIzQSk1XvmSUWFP_fsaH6rqtJSgHfmac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"label\": \"few new fields\",\n        \"description\": \"poiuytredgh98765r\",\n        \"data_type\": \"checkbox\",\n        \"order\": 1,\n        \"required\": false,\n        \"options\": [\"new\", \"new09\", \"new6783\", \"abccc\"],\n        \"forms\": [47]\n    },\n    {\n        \"label\": \"hola yayyayyy\",\n        \"description\": \"\",\n        \"data_type\": \"dropdown\",\n        \"order\": 5,\n        \"required\": false,\n        \"options\": [\"new\", \"new09\", \"new6783\", \"blalala\"],\n        \"forms\": [48]\n    },\n    {\n        \"label\": \"holaa\",\n        \"description\": \"poiuytrh98765r\",\n        \"data_type\": \"text\",\n        \"order\": 6,\n        \"required\": true,\n        \"forms\": [48]\n    },\n    {\n        \"label\": \"holaa\",\n        \"description\": \"poiuytrh98765r\",\n        \"data_type\": \"char\",\n        \"order\": 7,\n        \"required\": true,\n        \"forms\": [48]\n    }\n]"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/zulip_stat/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"zulip_stat",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update your Stats",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7f93d2c-9352-49fa-b97a-c9299fc0e631",
+								"exec": [
+									"if (pm.request.method === 'POST') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"    })   ",
+									"}",
+									"if (pm.request.method === 'GET') {",
+									"    pm.test(\"Status code\", function() {",
+									"        pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"    })",
+									"}",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk5Mjc5NDMyLCJqdGkiOiI0YjRlNWRkNWYwOWY0ZDc0OWExNTY4YTI2ZDBjZWY4NSIsInVzZXJfaWQiOjF9.CbO0omlLHkcEIzQSk1XvmSUWFP_fsaH6rqtJSgHfmac",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/zulip_stat/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"zulip_stat",
+								""
 							]
 						}
 					},

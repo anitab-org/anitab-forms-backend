@@ -28,8 +28,7 @@ class UserInformationView(viewsets.ModelViewSet):
         if UserInformation.objects.filter(user_id=user.id).exists():
             return Response("Information already filled", status=status.HTTP_409_CONFLICT)
         response = get_zulip_user(request.data['zulip_id'])
-        result = response.get('result', None)
-        if result is not None and result=='success':
+        if response:
             serializer.is_valid(raise_exception=True)
             serializer.save(user_id=user.id)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
