@@ -34,10 +34,10 @@ Next follow these instructions.
     psql
     CREATE DATABASE osp;
     \c osp;
-    GRANT ON PRIVILEGES ON DATABASE systersdb to osp;
+    GRANT ALL PRIVILEGES ON DATABASE systersdb to osp;
     ```
 
-
+    
 2. To start the server:
 
     ```
