@@ -34,7 +34,7 @@ Next follow these instructions.
     psql
     CREATE DATABASE osp;
     \c osp;
-    GRANT ON PRIVILEGES ON DATABASE systersdb to osp;
+    GRANT ALL PRIVILEGES ON DATABASE osp to osp;
     ```
 
 
