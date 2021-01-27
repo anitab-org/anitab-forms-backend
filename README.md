@@ -78,6 +78,26 @@ Follow the given instructions for Login into the app.
 
 To run the tests run: `python manage.py test`.
 
+### Run with Docker
+
+1. Make sure the latest version of docker-compose is installed by running ``docker-compose -v``. If it is not, install using ``pip install -U docker-compose``
+
+2. Change Database HOST in ``settings.py``
+
+- Go to ``main/settings.py``
+- Under databases change host to db.
+
+3. **Build docker image**
+
+Execute ``sudo docker-compose run web`` to build the image.
+
+4. **Run docker image**
+
+Run ``sudo docker-compose up`` from the root directory of project. Navigate to `http://localhost:8000` in your browser.
+
+**Note** 
+- Run `docker-compose up --build` to rebuild the image.
+
 ## Contributing
 Please read the Contibuting guidelines, [Code of Conduct](https://github.com/anitab-org/open-source-programs-backend/blob/develop/CODE_OF_CONDUCT.md) and [Reporting Guidelines](https://github.com/anitab-org/open-source-programs-backend/blob/develop/REPORTING_GUIDELINES.md)
 

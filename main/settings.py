@@ -118,7 +118,7 @@ DATABASES = {
         'NAME': "osp",
         'USER': "osp",
         'PASSWORD': "osp",
-        'HOST': "localhost",
+        'HOST': "localhost", # Change to db for docker-compose
         'PORT': 5432,
     }
 }
