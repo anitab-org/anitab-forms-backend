@@ -52,6 +52,10 @@ Next follow these instructions.
 5. To run the migrations run: `python manage.py migrate`
 6. You can terminate the process by `Ctrl+C` in your terminal.
 
+## Testing
+
+To run the tests run: `python manage.py test`.
+
 ## Contributing
 Please read the Contibuting guidelines, [Code of Conduct](https://github.com/anitab-org/open-source-programs-backend/blob/develop/CODE_OF_CONDUCT.md) and [Reporting Guidelines](https://github.com/anitab-org/open-source-programs-backend/blob/develop/REPORTING_GUIDELINES.md)
 
