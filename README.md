@@ -18,7 +18,9 @@ Make sure you have installed the following:
 
 Next follow these instructions.
 
-1. **Database Setup:** Before starting with the project create a db in you local using PostgreSQL with the following details. Refer to `main/settings.py` if you have any confusion.
+1. You can register a new user by setting up SendGrid details in the settings.py , you can take a refrence from [here](https://sendgrid.com/docs/for-developers/sending-email/integrating-with-the-smtp-api/)
+
+2. **Database Setup:** Before starting with the project create a db in you local using PostgreSQL with the following details. Refer to `main/settings.py` if you have any confusion.
 
     ```
     NAME: osp
@@ -37,32 +39,32 @@ Next follow these instructions.
     \c osp;
     GRANT ALL PRIVILEGES ON DATABASE osp to osp;
     ```
-2. You need to download API key file from your user-settings on Zulip. The file you download is named as 'download' or rename that to 'download'.
-3. Place that download file in the project's directory.
+3. You need to download API key file from your user-settings on Zulip. The file you download is named as 'download' or rename that to 'download'.
+4. Place that download file in the project's directory.
 
-4. Move into the project's directory.
+5. Move into the project's directory.
 
     ```
     cd open-source-programs-backend
     ```
-5. Create virtual environment (this is not a hard requirement, but its advisable)
+6. Create virtual environment (this is not a hard requirement, but its advisable)
     ```
     virtualenv venv
     source venv/bin/activate
     pip install -r requirements.txt
     ```
-6. To run the migrations run: 
+7. To run the migrations run: 
    ```
    python manage.py migrate
    ```
-7. To run the server:
+8. To run the server:
     ```
     python manage.py runserver
     ```
-8. Navigate to `http://localhost:8000/` in your browser.
-9. To change the port you may run `python manage.py runserver 0.0.0.0:<port_number>`
-10. To run the migrations run: `python manage.py migrate`
-11. You can terminate the process by `Ctrl+C` in your terminal.
+9. Navigate to `http://localhost:8000/` in your browser.
+10. To change the port you may run `python manage.py runserver 0.0.0.0:<port_number>`
+11. To run the migrations run: `python manage.py migrate`
+12. You can terminate the process by `Ctrl+C` in your terminal.
 
 Follow the given instructions for Login into the app.
 
