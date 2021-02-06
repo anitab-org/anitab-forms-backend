@@ -26,9 +26,10 @@ Next follow these instructions.
     PASSWORD: osp
     HOST: localhost
     ``` 
-    You may run the following commands for local setup of DB:
+    You may run the following commands for local setup of DB in Linux:
 
     ```
+    cd open-source-programs-backend
     sudo -i -u postgres
     createuser osp --pwprompt
     psql
@@ -36,21 +37,42 @@ Next follow these instructions.
     \c osp;
     GRANT ALL PRIVILEGES ON DATABASE osp to osp;
     ```
+2. You need to download API key file from your user-settings on Zulip. The file you download is named as 'download' or rename that to 'download'.
+3. Place that download file in the project's directory.
 
-
-2. To start the server:
+4. Move into the project's directory.
 
     ```
     cd open-source-programs-backend
+    ```
+5. Create virtual environment (this is not a hard requirement, but its advisable)
+    ```
     virtualenv venv
     source venv/bin/activate
     pip install -r requirements.txt
+    ```
+6. To run the migrations run: 
+   ```
+   python manage.py migrate
+   ```
+7. To run the server:
+    ```
     python manage.py runserver
     ```
-3. Navigate to `http://localhost:8000/` in your browser.
-4. To change the port you may run `python manage.py runserver 0.0.0.0:<port_number>`
-5. To run the migrations run: `python manage.py migrate`
-6. You can terminate the process by `Ctrl+C` in your terminal.
+8. Navigate to `http://localhost:8000/` in your browser.
+9. To change the port you may run `python manage.py runserver 0.0.0.0:<port_number>`
+10. To run the migrations run: `python manage.py migrate`
+11. You can terminate the process by `Ctrl+C` in your terminal.
+
+Follow the given instructions for Login into the app.
+
+1. You can register a new user by setting up SendGrid details in the `settings.py`, you can take a reference from [here](https://sendgrid.com/docs/for-developers/sending-email/integrating-with-the-smtp-api/)
+
+2. To create the superuser run:
+   ```
+   python manage.py createsuperuser
+   ````
+   Fill up the things it asked to and then Login into the app.
 
 ## Contributing
 Please read the Contibuting guidelines, [Code of Conduct](https://github.com/anitab-org/open-source-programs-backend/blob/develop/CODE_OF_CONDUCT.md) and [Reporting Guidelines](https://github.com/anitab-org/open-source-programs-backend/blob/develop/REPORTING_GUIDELINES.md)
