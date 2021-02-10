@@ -1,6 +1,6 @@
-ADM = 'admin'
-STU = 'student'
+ADM = "admin"
+STU = "student"
 USERS = (
-    (ADM, 'Admin'),
-    (STU, 'Student'),
+    (ADM, "Admin"),
+    (STU, "Student"),
 )

@@ -1,50 +1,47 @@
-from rest_framework.response import Response
-
-from osp.models import (
-    Choice, Checkbox, Dropdown,
-    Paragraph, ShortAnswer,
-    Date, Time, FileUpload
-)
+from osp.models import Checkbox, Choice, Date, Dropdown, FileUpload, Paragraph, ShortAnswer, Time
 from osp.serializers.fields import (
-    ChoiceSerializer, CheckboxSerializer, DropdownSerializer,
-    ParagraphSerializer, ShortAnswerSerializer, ParagraphSerializer,
-    DateSerializer, TimeSerializer, FileUploadSerializer
+    CheckboxSerializer,
+    ChoiceSerializer,
+    DateSerializer,
+    DropdownSerializer,
+    FileUploadSerializer,
+    ParagraphSerializer,
+    ShortAnswerSerializer,
+    TimeSerializer,
 )
+
 
 def get_model_and_serializer(data_type):
-    if data_type == 'char':
+    if data_type == "char":
         model = ShortAnswer
         serializer = ShortAnswerSerializer
 
-    elif data_type == 'text':
+    elif data_type == "text":
         model = Paragraph
         serializer = ParagraphSerializer
 
-    elif data_type == 'choice':
+    elif data_type == "choice":
         model = Choice
         serializer = ChoiceSerializer
 
-    elif data_type == 'checkbox':
+    elif data_type == "checkbox":
         model = Checkbox
         serializer = CheckboxSerializer
 
-    elif data_type == 'dropdown':
+    elif data_type == "dropdown":
         model = Dropdown
         serializer = DropdownSerializer
 
-    elif data_type == 'date':
+    elif data_type == "date":
         model = Date
         serializer = DateSerializer
 
-    elif data_type == 'time':
+    elif data_type == "time":
         model = Time
         serializer = TimeSerializer
 
-    elif data_type == 'file':
+    elif data_type == "file":
         model = FileUpload
         serializer = FileUploadSerializer
 
-    return {
-        "model": model,
-        "serializer": serializer
-    }
+    return {"model": model, "serializer": serializer}

@@ -1,20 +1,12 @@
-from rest_framework import viewsets, status
+from rest_framework import status, viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from osp.models import (
-    UserInformation, Form, Question, Choice,
-    Checkbox, Dropdown, Paragraph, ShortAnswer,
-    Date, Time, FileUpload
-)
-from osp.serializers.question import QuestionSerializer
-from osp.serializers.fields import (
-    ChoiceSerializer, CheckboxSerializer, DropdownSerializer,
-    ParagraphSerializer, ShortAnswerSerializer, ParagraphSerializer,
-    DateSerializer, TimeSerializer, FileUploadSerializer
-)
+from osp.models import Question, UserInformation
 from osp.permissions.admin import IsAdmin
+from osp.serializers.question import QuestionSerializer
 from osp.utils.question import get_model_and_serializer
+
 
 class QuestionView(viewsets.ViewSet):
 
@@ -23,24 +15,24 @@ class QuestionView(viewsets.ViewSet):
 
     # override permissions for different request methods
     def get_permissions(self):
-        if self.request.method == 'GET':
+        if self.request.method == "GET":
             self.permission_classes = [IsAuthenticated]
         else:
             self.permission_classes = [IsAuthenticated, IsAdmin]
 
         return super(QuestionView, self).get_permissions()
-    
+
     def get_queryset(self):
         queryset = self.queryset
-        form_id = self.request.query_params.get('form_id', None)
+        form_id = self.request.query_params.get("form_id", None)
         user = self.request.user
         user_type = UserInformation.objects.get(user_id=user.id).user_type
         if form_id:
             queryset = queryset.filter(forms__id=form_id)
-        if user_type == 'student':
-            queryset = queryset.filter(forms__published_status='published')
+        if user_type == "student":
+            queryset = queryset.filter(forms__published_status="published")
         return queryset
-    
+
     # GET request
     def list(self, request):
         objs = self.get_queryset()
@@ -48,24 +40,23 @@ class QuestionView(viewsets.ViewSet):
 
         for obj in objs:
             value = get_model_and_serializer(obj.data_type)
-            model = value['model']
-            serializer = value['serializer']
+            model = value["model"]
+            serializer = value["serializer"]
             instance = model.objects.get(id=obj.id)
             results.append(serializer(instance).data)
-            
-        #response
-        return Response(results, status=status.HTTP_200_OK)
 
+        # response
+        return Response(results, status=status.HTTP_200_OK)
 
     # POST request
     def create(self, request):
         results = []
 
         for obj in request.data:
-            value = get_model_and_serializer(obj['data_type'])
-            model = value['model']
-            serializer = value['serializer']
-            id = obj.get('id', None)
+            value = get_model_and_serializer(obj["data_type"])
+            model = value["model"]
+            serializer = value["serializer"]
+            id = obj.get("id", None)
             if id is not None:
                 instance = model.objects.get(id=id)
                 instance = serializer(instance, data=obj)
@@ -79,4 +70,3 @@ class QuestionView(viewsets.ViewSet):
 
         # response
         return Response(results, status=status.HTTP_201_CREATED)
-

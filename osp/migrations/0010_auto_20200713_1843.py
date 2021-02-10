@@ -6,17 +6,21 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('osp', '0009_form_close'),
+        ("osp", "0009_form_close"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='form',
-            name='close',
+            model_name="form",
+            name="close",
         ),
         migrations.AlterField(
-            model_name='form',
-            name='published_status',
-            field=models.CharField(choices=[('published', 'Published'), ('unpublished', 'Unpublished'), ('closed', 'Closed')], default='unpublished', max_length=11),
+            model_name="form",
+            name="published_status",
+            field=models.CharField(
+                choices=[("published", "Published"), ("unpublished", "Unpublished"), ("closed", "Closed")],
+                default="unpublished",
+                max_length=11,
+            ),
         ),
     ]

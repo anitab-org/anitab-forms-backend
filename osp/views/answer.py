@@ -1,26 +1,23 @@
-from rest_framework import viewsets, status
+from rest_framework import status, viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from osp.models import (
-    Question, Answer, ChoiceValue, CheckboxValue, DropdownValue, DateValue,
-    TimeValue, FileUploadValue, ShortAnswerValue, ParagraphValue, FormFeedback
-)
-from osp.serializers.answer import AnswerReadSerializer, AnswerWriteSerializer
-from osp.serializers.form_feedback import FormFeedbackWriteSerializer
-from osp.utils.answer_function import get_model_and_serializer, get_create_model_and_serializer
+from osp.models import Answer
+from osp.serializers.answer import AnswerReadSerializer
+from osp.utils.answer_function import get_model_and_serializer
+
 
 class AnswerView(viewsets.ModelViewSet):
 
     serializer_class = AnswerReadSerializer
     permission_classes = [IsAuthenticated]
-    queryset = Answer.objects.all().order_by('question__order')
+    queryset = Answer.objects.all().order_by("question__order")
 
     def get_queryset(self):
         queryset = self.queryset
-        form_id = self.request.query_params.get('form_id', None)
-        question_id = self.request.query_params.get('question_id', None)
-        user_id = self.request.query_params.get('user_id', None)
+        form_id = self.request.query_params.get("form_id", None)
+        question_id = self.request.query_params.get("question_id", None)
+        user_id = self.request.query_params.get("user_id", None)
         user = self.request.user
         if form_id is not None:
             queryset = queryset.filter(form_answers__form_id=form_id)
@@ -30,7 +27,7 @@ class AnswerView(viewsets.ModelViewSet):
             queryset = queryset.filter(form_answers__user_id=user.id)
         if question_id is not None:
             queryset = queryset.filter(question_id=question_id)
-        
+
         # response
         return queryset
 
@@ -41,8 +38,8 @@ class AnswerView(viewsets.ModelViewSet):
 
         for obj in objs:
             value = get_model_and_serializer(obj.question.data_type)
-            model = value['model']
-            serializer = value['serializer']
+            model = value["model"]
+            serializer = value["serializer"]
             instance = model.objects.get(id=obj.id)
             results.append(serializer(instance).data)
 

@@ -1,0 +1,13 @@
+[tool.black]
+line-length = 119
+exclude = '''
+
+(
+  /(         
+     \.git 
+    | \.mypy_cache
+    | \.venv
+    | venv
+  )/
+)
+'''
