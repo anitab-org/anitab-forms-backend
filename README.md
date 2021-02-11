@@ -74,6 +74,10 @@ Follow the given instructions for Login into the app.
    ````
    Fill up the things it asked to and then Login into the app.
 
+## Testing
+
+To run the tests run: `python manage.py test`.
+
 ## Contributing
 Please read the Contibuting guidelines, [Code of Conduct](https://github.com/anitab-org/open-source-programs-backend/blob/develop/CODE_OF_CONDUCT.md) and [Reporting Guidelines](https://github.com/anitab-org/open-source-programs-backend/blob/develop/REPORTING_GUIDELINES.md)
 
