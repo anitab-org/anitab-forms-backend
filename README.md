@@ -80,12 +80,12 @@ To run the tests run: `python manage.py test`.
 
 ## Documentation
 
-- Join us on [Open session](https://anitab-org.zulipchat.com/#narrow/stream/237907-open-source-progs/topic/Open.20Sessions) and see [Meeting minutes](https://docs.google.com/document/d/1YF13IbBrU1ln4ZF1fOpgb-xGRgIF6tZLSjIBQgDmN7k/edit)
-- For setting up the project locally watch [this video](https://youtu.be/_b2RQGbYN9w)
-- Checkout the video of [GSOC](https://youtu.be/3A746GppZ0Y) here
-- Have questions in mind feel free to ask on [#question stream](https://anitab-org.zulipchat.com/#narrow/stream/237907-open-source-progs/topic/Questions)
+- Join us on [Open session](https://anitab-org.zulipchat.com/#narrow/stream/237907-open-source-progs/topic/Open.20Sessions) and see [Meeting minutes](https://docs.google.com/document/d/1YF13IbBrU1ln4ZF1fOpgb-xGRgIF6tZLSjIBQgDmN7k/edit).
+- For setting up the project locally watch [this video](https://youtu.be/_b2RQGbYN9w).
+- Checkout the video of [project demonstration](https://youtu.be/3A746GppZ0Y) here.
+- Have questions in mind feel free to ask on [#question stream](https://anitab-org.zulipchat.com/#narrow/stream/237907-open-source-progs/topic/Questions).
 
-For a more complete information on OpenSourcePrograms backend project, please go to [OpenSourcePrograms Backend Wiki page](https://github.com/anitab-org/open-source-programs-backend/wiki)
+For more information, see [open-source-programs-backend wiki](https://github.com/anitab-org/open-source-programs-backend/wiki).
 
 ## Contributing
 Please read the Contibuting guidelines, [Code of Conduct](https://github.com/anitab-org/open-source-programs-backend/blob/develop/CODE_OF_CONDUCT.md) and [Reporting Guidelines](https://github.com/anitab-org/open-source-programs-backend/blob/develop/REPORTING_GUIDELINES.md)
