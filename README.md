@@ -78,7 +78,7 @@ Follow the given instructions for Login into the app.
 
 To run the tests run: `python manage.py test`.
 
-## Project Documentation
+## Documentation
 
 - Join us on [Open session](https://anitab-org.zulipchat.com/#narrow/stream/237907-open-source-progs/topic/Open.20Sessions) and see [Meeting minutes](https://docs.google.com/document/d/1YF13IbBrU1ln4ZF1fOpgb-xGRgIF6tZLSjIBQgDmN7k/edit)
 - For setting up the project locally watch [this video](https://youtu.be/_b2RQGbYN9w)
