@@ -48,19 +48,6 @@ Next follow these instructions.
 
     ```
     cd open-source-programs-backend
-
-    ````
-5. You don't need to create virtual environment while working in Linux.
-    `````
-    virtualenv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
-    ````
-6. To run the migrations run: 
-   ````
-   python manage.py migrate
-   ````
-=======
     ```
 5. Create virtual environment (this is not a hard requirement, but its advisable)
     ```
