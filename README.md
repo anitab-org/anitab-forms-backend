@@ -36,6 +36,8 @@ Next follow these instructions.
     CREATE DATABASE osp;
     \c osp;
     GRANT ALL PRIVILEGES ON DATABASE osp to osp;
+    GRANT ALL PRIVILEGES ON DATABASE test_osp to osp;
+    ALTER USER osp CREATEDB;
     ```
 2. You need to download API key file from your user-settings on Zulip. The file you download is named as 'download' or rename that to 'download'.
 3. Place that download file in the project's directory.
