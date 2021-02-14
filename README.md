@@ -1,4 +1,6 @@
 # Open Source Programs (Backend)
+![Build Status](https://github.com/anitab-org/open-source-programs-backend/workflows/Tests%20Build/badge.svg)
+
 Open Source Programs (OSP) is an application that simplifies the processing and selection procedure of Open Source Programs of AnitaB.org Open Source or other third-party programs. This is the Backend repo for OSP.
 
 ## Tech Stack
