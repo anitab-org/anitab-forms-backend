@@ -80,12 +80,14 @@ To run the tests run: `python manage.py test`.
 
 ## Documentation
 
-- Join us on [Open session](https://anitab-org.zulipchat.com/#narrow/stream/237907-open-source-progs/topic/Open.20Sessions) and see [Meeting minutes](https://docs.google.com/document/d/1YF13IbBrU1ln4ZF1fOpgb-xGRgIF6tZLSjIBQgDmN7k/edit).
+- Read the [Meeting minutes](https://docs.google.com/document/d/1YF13IbBrU1ln4ZF1fOpgb-xGRgIF6tZLSjIBQgDmN7k/edit) notes from our open sessions about the project.
 - For setting up the project locally watch [this video](https://youtu.be/_b2RQGbYN9w).
-- Checkout the video of [project demonstration](https://youtu.be/3A746GppZ0Y) here.
-- Have questions in mind feel free to ask on [#question stream](https://anitab-org.zulipchat.com/#narrow/stream/237907-open-source-progs/topic/Questions).
+- To learn about the project's initial features, watch the video of [project demonstration](https://youtu.be/3A746GppZ0Y).
+- [Design and Mocks Google Drive folder](https://drive.google.com/drive/folders/1MybSH3f8peXGUSRxhDydDtoAi8WJL1th).
+- [Timeline deliverables for the project during GSoC 2020](https://docs.google.com/document/d/1xl9F5kMZrKo4mNhnP0SKpk7WkQc8PLca1ym7EZMpjSc/edit).
+- [GSoC 2020 Project Meeting Minutes](https://docs.google.com/document/d/1YF13IbBrU1ln4ZF1fOpgb-xGRgIF6tZLSjIBQgDmN7k/edit).
 
-For more information, see [open-source-programs-backend wiki](https://github.com/anitab-org/open-source-programs-backend/wiki).
+For more information, you can read [backend project wiki](https://github.com/anitab-org/open-source-programs-backend/wiki) and the [web project wiki](https://github.com/anitab-org/open-source-programs-web/wiki).
 
 ## Contributing
 Please read the Contibuting guidelines, [Code of Conduct](https://github.com/anitab-org/open-source-programs-backend/blob/develop/CODE_OF_CONDUCT.md) and [Reporting Guidelines](https://github.com/anitab-org/open-source-programs-backend/blob/develop/REPORTING_GUIDELINES.md)
