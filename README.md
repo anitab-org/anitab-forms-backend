@@ -37,10 +37,6 @@ Next follow these instructions.
     \c osp;
     GRANT ALL PRIVILEGES ON DATABASE osp to osp;
     ```
-    
-2. you need to download API key file from your user-settings on Zulip. The file you download is named as 'download' or rename that to 'download'.
-3. Put that download file in the project's directory.
-=======
 2. You need to download API key file from your user-settings on Zulip. The file you download is named as 'download' or rename that to 'download'.
 3. Place that download file in the project's directory.
 
