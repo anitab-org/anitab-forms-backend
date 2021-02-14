@@ -90,7 +90,6 @@ Follow the given instructions for Login into the app.
 1. You can register a new user by setting up SendGrid details in the `settings.py`, you can take a reference from [here](https://sendgrid.com/docs/for-developers/sending-email/integrating-with-the-smtp-api/)
 
 2. To create the superuser run:
-
    ```
    python manage.py createsuperuser
    ````
