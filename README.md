@@ -60,7 +60,7 @@ Next follow these instructions.
     python manage.py runserver
     ```
 8. Navigate to `http://localhost:8000/` in your browser.
-9. To change the port you may run `python manage.py runserver 0.0.0.0:<port_number>`
+9. To change the port you may run `python manage.py runserver <port_number>`
 10. To run the migrations run: `python manage.py migrate`
 11. You can terminate the process by `Ctrl+C` in your terminal.
 
@@ -77,6 +77,30 @@ Follow the given instructions for Login into the app.
 ## Testing
 
 To run the tests run: `python manage.py test`.
+
+### Run with Docker
+
+1. Make sure the latest version of docker and docker-compose are installed.
+
+- For **docker** run ``docker -v`` from your terminal. If docker is not installed, install it from [here](https://docs.docker.com/engine/install/).
+- For **docker-compose** run ``docker-compose -v`` from terminal. If it is not installed then install it by running ``pip install docker-compose`` or from [here](https://docs.docker.com/compose/install/).
+
+2. Change Database HOST in ``settings.py``
+
+- Go to ``main/settings.py``
+- Under databases change host to db.
+
+3. **Build docker image**
+
+Execute ``sudo docker-compose run web`` to build the image.
+
+4. **Run docker image**
+
+Run ``sudo docker-compose up`` from the root directory of project. Navigate to `http://localhost:8000` in your browser.
+
+**Note** 
+- Run `docker-compose up --build` to rebuild the image.
+- To **interact** with docker containers use ``docker exec -it {container id} bash`` from your terminal. Container id can be found using ``docker ps``.
 
 ## Documentation
 

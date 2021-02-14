@@ -1,0 +1,21 @@
+version: "3.7"
+   
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=osp
+      - POSTGRES_USER=osp
+      - POSTGRES_PASSWORD=osp
+    ports:
+      - 5432:5432
+  web:
+    build: .
+    image: open-source-prog:backend
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
