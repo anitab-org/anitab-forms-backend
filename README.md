@@ -55,7 +55,6 @@ Next follow these instructions.
    ```
    python manage.py migrate
    ```
-
 7. To run the server:
     ```
     python manage.py runserver
