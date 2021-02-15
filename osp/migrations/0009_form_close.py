@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('osp', '0008_auto_20200708_1817'),
+        ("osp", "0008_auto_20200708_1817"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='form',
-            name='close',
+            model_name="form",
+            name="close",
             field=models.BooleanField(default=False),
         ),
     ]

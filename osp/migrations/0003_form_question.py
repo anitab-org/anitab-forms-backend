@@ -6,40 +6,62 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('osp', '0002_auto_20200609_1626'),
+        ("osp", "0002_auto_20200609_1626"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Question',
+            name="Question",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_on', models.DateTimeField(auto_now_add=True)),
-                ('updated_on', models.DateTimeField(auto_now=True)),
-                ('label', models.CharField(max_length=255)),
-                ('data_type', models.CharField(choices=[('char', 'Short Answer'), ('text', 'Paragraph Answer'), ('choice', 'Choice'), ('checkbox', 'Checkbox'), ('dropdown', 'Dropdown'), ('file', 'File Upload'), ('date', 'Date'), ('time', 'Time')], max_length=8)),
-                ('description', models.TextField(blank=True)),
-                ('order', models.PositiveIntegerField()),
-                ('required', models.BooleanField(default=False)),
+                ("id", models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("created_on", models.DateTimeField(auto_now_add=True)),
+                ("updated_on", models.DateTimeField(auto_now=True)),
+                ("label", models.CharField(max_length=255)),
+                (
+                    "data_type",
+                    models.CharField(
+                        choices=[
+                            ("char", "Short Answer"),
+                            ("text", "Paragraph Answer"),
+                            ("choice", "Choice"),
+                            ("checkbox", "Checkbox"),
+                            ("dropdown", "Dropdown"),
+                            ("file", "File Upload"),
+                            ("date", "Date"),
+                            ("time", "Time"),
+                        ],
+                        max_length=8,
+                    ),
+                ),
+                ("description", models.TextField(blank=True)),
+                ("order", models.PositiveIntegerField()),
+                ("required", models.BooleanField(default=False)),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
         migrations.CreateModel(
-            name='Form',
+            name="Form",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('description', models.TextField(blank=True)),
-                ('created_on', models.DateTimeField(auto_now_add=True)),
-                ('updated_on', models.DateTimeField(auto_now=True)),
-                ('published_status', models.BooleanField(default=False)),
-                ('target_user', models.CharField(choices=[('all', 'All Users'), ('admin', 'Admin'), ('student', 'Student')], default='all', max_length=7)),
-                ('form_fields', models.ManyToManyField(blank=True, default=None, to='osp.Question')),
+                ("id", models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("name", models.CharField(max_length=255)),
+                ("description", models.TextField(blank=True)),
+                ("created_on", models.DateTimeField(auto_now_add=True)),
+                ("updated_on", models.DateTimeField(auto_now=True)),
+                ("published_status", models.BooleanField(default=False)),
+                (
+                    "target_user",
+                    models.CharField(
+                        choices=[("all", "All Users"), ("admin", "Admin"), ("student", "Student")],
+                        default="all",
+                        max_length=7,
+                    ),
+                ),
+                ("form_fields", models.ManyToManyField(blank=True, default=None, to="osp.Question")),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
     ]

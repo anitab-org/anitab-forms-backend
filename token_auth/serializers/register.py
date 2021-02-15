@@ -4,16 +4,11 @@ from rest_framework_jwt.serializers import PasswordField
 
 User = get_user_model()
 
+
 class RegisterSerializer(serializers.ModelSerializer):
 
-    password = PasswordField(
-        write_only=True,
-        required=True
-    )
-    confirm_password = PasswordField(
-        write_only=True,
-        required=True
-    )
+    password = PasswordField(write_only=True, required=True)
+    confirm_password = PasswordField(write_only=True, required=True)
 
     class Meta:
         model = User
@@ -26,12 +21,12 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
 
-        username = validated_data.get('username', None)
-        email = validated_data.get('email', None)
-        password = validated_data.get('password', None)
-        confirm_password = validated_data.get('confirm_password', None)
+        username = validated_data.get("username", None)
+        email = validated_data.get("email", None)
+        password = validated_data.get("password", None)
+        confirm_password = validated_data.get("confirm_password", None)
 
-        if (email and User.objects.filter(email=email).exclude(username=username).exists()):
+        if email and User.objects.filter(email=email).exclude(username=username).exists():
             raise serializers.ValidationError("Email addresses must be unique.")
 
         if password != confirm_password:
@@ -42,4 +37,3 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
-    
