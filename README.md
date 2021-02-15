@@ -74,6 +74,32 @@ Follow the given instructions for Login into the app.
    ````
    Fill up the things it asked to and then Login into the app.
 
+## Environment Variables
+
+1. zulip_id : You can go [Zulip](https://anitab-org.zulipchat.com) and click on your name from the user list on the right. On the URL, you will see a number after user. That is your Zulip user ID.
+
+2. SENDGRID_API_KEY : Follow the given steps to create a Sendgrid API key -
+
+	- Go to [Sendgrid's website](https://app.sendgrid.com/guide)
+
+	- Navigate to Settings on the left navigation bar, and then - select API Keys.
+
+	- Click Create API Key.
+
+	- Give your API key a name.
+
+	- Select Full Access, Restricted Access, or Billing Access. If you're selecting Restricted Access, or Billing Access, select the specific permissions to give each category. For more information, see API key permissions.
+
+	- Click Create & View.
+
+	- The API KEY is generated and displayed to you just once. So be sure to copy and save it somewhere.
+
+Add both of these variables to your .env file as follows:
+```
+export zulip_id=<your-zulip-id>
+export SENDGRID_API_KEY=<your-sendgrid-api-key>
+```
+
 ## Testing
 
 To run the tests run: `python manage.py test`.
