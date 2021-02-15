@@ -1,4 +1,4 @@
-# GITHUB ACTIONS
+# GitHub Actions
 
 The purpose of using GitHub actions is to run tests and QA-checks.
 
