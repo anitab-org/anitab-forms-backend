@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from rest_framework.serializers import ValidationError
+
 from token_auth.serializers.register import RegisterSerializer
 
 User = get_user_model()
@@ -14,10 +15,10 @@ class RegisterSerializerTests(TestCase):
     def setUp(self):
         self.test_user = self.__create_user("test", "test@test.com", "test")
         self.test_data = {
-            'username': 'testuser2',
-            'email': 'test2@test.com',
-            'password': 'test',
-            'confirm_password': 'test'
+            "username": "testuser2",
+            "email": "test2@test.com",
+            "password": "test",
+            "confirm_password": "test",
         }
 
     def __create_user(self, username, email, password):
@@ -30,10 +31,7 @@ class RegisterSerializerTests(TestCase):
         Testing Response of Register Serializer.
         """
         actual_response = RegisterSerializer(self.test_user).data
-        expected_response = {
-            'username': self.test_user.username,
-            'email': self.test_user.email
-        }
+        expected_response = {"username": self.test_user.username, "email": self.test_user.email}
         self.assertEqual(actual_response, expected_response)
 
     def test_create_serializer(self):
@@ -43,8 +41,7 @@ class RegisterSerializerTests(TestCase):
         serializer = RegisterSerializer(data=self.test_data)
         if serializer.is_valid():
             user = serializer.save()
-        self.assertEquals(user, User.objects.get(
-            email=self.test_data['email']))
+        self.assertEquals(user, User.objects.get(email=self.test_data["email"]))
 
     def test_create_serializer_with_same_email_id(self):
         """
@@ -61,7 +58,7 @@ class RegisterSerializerTests(TestCase):
         Testing Validation Error in create method of Register Serializer
         when password and confirm password are not equal.
         """
-        self.test_data['password'] = 'different'
+        self.test_data["password"] = "different"
         serializer = RegisterSerializer(data=self.test_data)
         if serializer.is_valid():
             with self.assertRaises(ValidationError):

@@ -6,13 +6,26 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('osp', '0004_checkbox_choice_date_dropdown_fileupload_paragraph_shortanswer_time'),
+        ("osp", "0004_checkbox_choice_date_dropdown_fileupload_paragraph_shortanswer_time"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='question',
-            name='data_type',
-            field=models.CharField(choices=[('char', 'Short Answer'), ('text', 'Paragraph Answer'), ('choice', 'Choice'), ('checkbox', 'Checkbox'), ('dropdown', 'Dropdown'), ('file', 'File Upload'), ('date', 'Date'), ('time', 'Time')], default='char', max_length=8),
+            model_name="question",
+            name="data_type",
+            field=models.CharField(
+                choices=[
+                    ("char", "Short Answer"),
+                    ("text", "Paragraph Answer"),
+                    ("choice", "Choice"),
+                    ("checkbox", "Checkbox"),
+                    ("dropdown", "Dropdown"),
+                    ("file", "File Upload"),
+                    ("date", "Date"),
+                    ("time", "Time"),
+                ],
+                default="char",
+                max_length=8,
+            ),
         ),
     ]

@@ -80,6 +80,17 @@ Follow the given instructions for Login into the app.
 
 To run the tests run: `python manage.py test`.
 
+## QA Checks
+
+Before creating a pull-request, always run QA checks to make your code more readable and error-free. Steps to run QA checks are:
+1. Install QA checks dependencies:
+    ```
+    pip install black==20.8b1
+    pip install isort==5.7.0
+    pip install flake8==3.8.4
+    ```
+2. Run QA checks: `./osp-qa-checks`.
+
 ### Run with Docker
 
 1. Make sure the latest version of docker and docker-compose are installed.

@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('osp', '0015_zulipstat_first_activity'),
+        ("osp", "0015_zulipstat_first_activity"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='zulipstat',
-            name='updated_on',
+            model_name="zulipstat",
+            name="updated_on",
             field=models.DateTimeField(auto_now=True),
         ),
     ]
