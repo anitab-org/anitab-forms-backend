@@ -37,32 +37,31 @@ Next follow these instructions.
     \c osp;
     GRANT ALL PRIVILEGES ON DATABASE osp to osp;
     ```
-2. You need to download API key file from your user-settings on Zulip. The file you download is named as 'download' or rename that to 'download'.
-3. Place that download file in the project's directory.
+2. **Set the environment variables:** You need to download API key file from your user-settings on Zulip. The file you download is named as 'download' or rename that to 'download'.Place that download file in the project's directory.
 
-4. Move into the project's directory.
+3. Move into the project's directory.
 
     ```
     cd open-source-programs-backend
     ```
-5. Create virtual environment (this is not a hard requirement, but its advisable)
+4. Create virtual environment (this is not a hard requirement, but its advisable)
     ```
     virtualenv venv
     source venv/bin/activate
     pip install -r requirements.txt
     ```
-6. To run the migrations run: 
+5. To run the migrations run: 
    ```
    python manage.py migrate
    ```
-7. To run the server:
+6. To run the server:
     ```
     python manage.py runserver
     ```
-8. Navigate to `http://localhost:8000/` in your browser.
-9. To change the port you may run `python manage.py runserver <port_number>`
-10. To run the migrations run: `python manage.py migrate`
-11. You can terminate the process by `Ctrl+C` in your terminal.
+7. Navigate to `http://localhost:8000/` in your browser.
+8. To change the port you may run `python manage.py runserver <port_number>`
+9. To run the migrations run: `python manage.py migrate`
+10. You can terminate the process by `Ctrl+C` in your terminal.
 
 Follow the given instructions for Login into the app.
 
@@ -76,27 +75,26 @@ Follow the given instructions for Login into the app.
 
 ## Environment Variables
 
-1. zulip_id : You can go [Zulip](https://anitab-org.zulipchat.com) and click on your name from the user list on the right. On the URL, you will see a number after user. That is your Zulip user ID.
+1. `Zulip API KEY file` - You can go [Zulip](https://anitab-org.zulipchat.com) and follow [these instructions to get your API KEY](https://zulip.com/api/api-keys#get-your-api-key). Download the file and save it in the root folder of the project with the name `download`.
 
-2. SENDGRID_API_KEY : Follow the given steps to create a Sendgrid API key -
+2. `SENDGRID_API_KEY` - Follow the given steps to create a Sendgrid API key:
 
-	- Go to [Sendgrid's website](https://app.sendgrid.com/guide)
+	1. Go to [Sendgrid's website](https://app.sendgrid.com/guide)
 
-	- Navigate to Settings on the left navigation bar, and then - select API Keys.
+	2. Navigate to Settings on the left navigation bar, and then - select API Keys.
 
-	- Click Create API Key.
+	3. Click Create API Key.
 
-	- Give your API key a name.
+	4. Give your API key a name.
 
-	- Select Full Access, Restricted Access, or Billing Access. If you're selecting Restricted Access, or Billing Access, select the specific permissions to give each category. For more information, see API key permissions.
+	5. Select Full Access, Restricted Access, or Billing Access. If you're selecting Restricted Access, or Billing Access, select the specific permissions to give each category. For more information, see API key permissions.
 
-	- Click Create & View.
+	6. Click Create & View.
 
-	- The API KEY is generated and displayed to you just once. So be sure to copy and save it somewhere.
+	7. The API KEY is generated and displayed to you just once. So be sure to copy and save it somewhere.
 
-Add both of these variables to your .env file as follows:
+Add it to your .env file as follows:
 ```
-export zulip_id=<your-zulip-id>
 export SENDGRID_API_KEY=<your-sendgrid-api-key>
 ```
 
