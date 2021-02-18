@@ -37,7 +37,7 @@ Next follow these instructions.
     \c osp;
     GRANT ALL PRIVILEGES ON DATABASE osp to osp;
     ```
-2. **Set the environment variables:** You need to download API key file from your user-settings on Zulip. The file you download is named as 'download' or rename that to 'download'.Place that download file in the project's directory.
+2. **Set the environment variables:** You need to download Zulip API key file from your user-settings on Zulip. The file you download is named as `download` or rename it to `download`. Place that download file in the project's directory. For more information follow [Environment Variables](#Environment-Variables) section.
 
 3. Move into the project's directory.
 
@@ -80,17 +80,11 @@ Follow the given instructions for Login into the app.
 2. `SENDGRID_API_KEY` - Follow the given steps to create a Sendgrid API key:
 
 	1. Go to [Sendgrid's website](https://app.sendgrid.com/guide)
-
 	2. Navigate to Settings on the left navigation bar, and then - select API Keys.
-
 	3. Click Create API Key.
-
 	4. Give your API key a name.
-
 	5. Select Full Access, Restricted Access, or Billing Access. If you're selecting Restricted Access, or Billing Access, select the specific permissions to give each category. For more information, see API key permissions.
-
 	6. Click Create & View.
-
 	7. The API KEY is generated and displayed to you just once. So be sure to copy and save it somewhere.
 
 Add it to your .env file as follows:
