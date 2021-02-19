@@ -135,12 +135,12 @@ Run ``sudo docker-compose up`` from the root directory of project. Navigate to `
 
 ## Documentation
 
-- Read the [Meeting minutes](https://docs.google.com/document/d/1YF13IbBrU1ln4ZF1fOpgb-xGRgIF6tZLSjIBQgDmN7k/edit) notes from our open sessions about the project.
+- Read the [Meeting minutes](https://docs.google.com/document/d/1JSyAr9bO4hJJxFvThvn_LVjW0KcEspXpzvWULRC_xJE/edit) notes from our open sessions about the project.
 - For setting up the project locally watch [this video](https://youtu.be/_b2RQGbYN9w).
 - To learn about the project's initial features, watch the video of [project demonstration](https://youtu.be/3A746GppZ0Y).
 - [Design and Mocks Google Drive folder](https://drive.google.com/drive/folders/1MybSH3f8peXGUSRxhDydDtoAi8WJL1th).
 - [Timeline deliverables for the project during GSoC 2020](https://docs.google.com/document/d/1xl9F5kMZrKo4mNhnP0SKpk7WkQc8PLca1ym7EZMpjSc/edit).
-- [GSoC 2020 Project Meeting Minutes](https://docs.google.com/document/d/1YF13IbBrU1ln4ZF1fOpgb-xGRgIF6tZLSjIBQgDmN7k/edit).
+- [GSoC 2020 Project Meeting Minutes](https://docs.google.com/document/d/1YF13IbBrU1ln4ZF1fOpgb-xGRgIF6tZLSjIBQgDmN7k/edit) [Old].
 
 For more information, you can read [backend project wiki](https://github.com/anitab-org/open-source-programs-backend/wiki) and the [web project wiki](https://github.com/anitab-org/open-source-programs-web/wiki).
 
