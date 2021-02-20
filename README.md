@@ -73,7 +73,16 @@ Next follow these instructions.
 
 Follow the given instructions for Login into the app.
 
-1. You can register a new user by setting up SendGrid details in the `settings.py`, you can take a reference from [here](https://sendgrid.com/docs/for-developers/sending-email/integrating-with-the-smtp-api/)
+1. You can register a new user by making a POST request on `/api/token_auth/register/`. After this confirmation e-mail will be sent to standard output (terminal). To receive confirmation e-mail using Sendgrid see [this](#environment-variables). The content of the request must be like this:
+    ```json
+    {
+        "username":"< YOUR USERNAME >",
+        "email":"< YOUR EMAIL >",
+        "password":"< YOUR PASSWORD >",
+        "confirm_password":"< YOUR PASSWORD >"  
+    }
+    ```
+
 
 2. To create the superuser run:
    ```
@@ -85,7 +94,7 @@ Follow the given instructions for Login into the app.
 
 1. `Zulip API KEY file` - You can go [Zulip](https://anitab-org.zulipchat.com) and follow [these instructions to get your API KEY](https://zulip.com/api/api-keys#get-your-api-key). Download the file and save it in the root folder of the project with the name `download`.
 
-2. `SENDGRID_API_KEY` - Follow the given steps to create a Sendgrid API key:
+2. `SENDGRID_API_KEY` - It is optional for development. To use this variable make `DEBUG=False` in `settings.py`. Follow the given steps to create a Sendgrid API key:
 
 	1. Go to [Sendgrid's website](https://app.sendgrid.com/guide)
 	2. Navigate to Settings on the left navigation bar, and then - select API Keys.
