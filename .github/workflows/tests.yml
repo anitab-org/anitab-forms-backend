@@ -42,7 +42,7 @@ jobs:
       run: echo -e "${{ secrets.ZULIP_API_KEY }}" >> download
 
     - name: Creating SECRET_KEY
-      run: echo -e "${{ secrets.SECRET_KEY }}" >> "test"
+      run: echo -e "${{ SECRET_KEY }}" >> "test"
 
     - name: Migrating Test Database
       run: python manage.py migrate
