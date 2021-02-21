@@ -45,6 +45,16 @@ Next follow these instructions.
     \c osp;
     GRANT ALL PRIVILEGES ON DATABASE osp to osp;
     ```
+    You may run the following commands for local setup of DB in Widows:
+
+    ```
+    cd open-source-programs-backend
+    psql -U postgres
+    CREATE ROLE osp LOGIN PASSWORD 'osp' NOINHERIT CREATEDB;
+    CREATE DATABASE osp;
+    \c osp;
+    GRANT ALL PRIVILEGES ON DATABASE osp to osp;
+    ```
 2. **Set the environment variables:** You need to download Zulip API key file from your user-settings on Zulip. The file you download is named as `download` or rename it to `download`. Place that download file in the project's directory. For more information follow [Environment Variables](#Environment-Variables) section.
 
 3. Move into the project's directory.
@@ -56,6 +66,12 @@ Next follow these instructions.
     ```
     virtualenv venv
     source venv/bin/activate
+    pip install -r requirements.txt
+    ```
+    For Windows:
+    ```
+    virtualenv venv
+    venv\Scripts\activate
     pip install -r requirements.txt
     ```
 5. To run the migrations run: 
