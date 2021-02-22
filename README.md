@@ -45,7 +45,7 @@ Next follow these instructions.
     \c osp;
     GRANT ALL PRIVILEGES ON DATABASE osp to osp;
     ```
-    You may run the following commands for local setup of DB in Widows:
+    You may run the following commands for local setup of DB in Windows:
 
     ```
     cd open-source-programs-backend
