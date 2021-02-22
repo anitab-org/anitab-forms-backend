@@ -65,33 +65,35 @@ Next follow these instructions.
 4. Create virtual environment (this is not a hard requirement, but its advisable)
     ```
     virtualenv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
     ```
-    For Git Bash Users:
+     Activating virtual environment for Linux users:
+     ```
+     source venv/bin/activate
+     ```
+     Activating virtual environment for Git Bash users:
+     ```
+     source ./venv/Scripts/activate
+     ``` 
+     Activating virtual environment for Windows users:   
+     ``` 
+     venv\Scripts\activate
+     ```
+5. To install dependencies:
     ```
-    virtualenv venv
-    source ./venv/Scripts/activate
     pip install -r requirements.txt
-    ``` 
-    For Windows Command Line Users:   
-    ``` 
-    virtualenv venv
-    venv\Scripts\activate
-    pip install -r requirements.txt
-    ```
-5. To run the migrations run: 
+    ```	
+6. To run the migrations run: 
    ```
    python manage.py migrate
    ```
-6. To run the server:
+7. To run the server:
     ```
     python manage.py runserver
     ```
-7. Navigate to `http://localhost:8000/` in your browser.
-8. To change the port you may run `python manage.py runserver <port_number>`
-9. To run the migrations run: `python manage.py migrate`
-10. You can terminate the process by `Ctrl+C` in your terminal.
+8. Navigate to `http://localhost:8000/` in your browser.
+9. To change the port you may run `python manage.py runserver <port_number>`
+10. To run the migrations run: `python manage.py migrate`
+11. You can terminate the process by `Ctrl+C` in your terminal.
 
 Follow the given instructions for Login into the app.
 
