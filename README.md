@@ -71,7 +71,12 @@ Next follow these instructions.
     For Windows:
     ```
     virtualenv venv
-    venv\Scripts\activate
+    For Git Bash Users:
+    ```
+    source ./venv/Scripts/activate
+     ``` 
+   For Windows Command Line Users:   
+    ``` venv\Scripts\activate```
     pip install -r requirements.txt
     ```
 5. To run the migrations run: 
