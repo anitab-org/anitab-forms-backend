@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from osp.models import UserInformation, ZulipStat
 from osp.serializers.zulip_stat import ZulipStatSerializer
 from osp.serializers.zulip_stat_user import ZulipStatUserSerializer
-from osp.utils.zulip_api import get_messages, get_newest_message, get_stream_messages, get_zulip_user
+from osp.utils.zulip_api import get_total_messages, get_newest_message, get_stream_messages, get_zulip_user
 
 
 class ZulipStatView(viewsets.ModelViewSet):
@@ -54,7 +54,7 @@ class ZulipStatView(viewsets.ModelViewSet):
                 last_activity = r["timestamp"]
 
             request.data["zulip_username"] = full_name
-            request.data["total_messages"] = get_messages(zulip_id)
+            request.data["total_messages"] = get_total_messages(zulip_id)
             request.data["last_activity"] = make_aware(datetime.fromtimestamp(last_activity))
             request.data["newcomers_messages"] = get_stream_messages("newcomers", zulip_id)
             request.data["general_messages"] = get_stream_messages("general", zulip_id)
@@ -82,7 +82,7 @@ class ZulipStatView(viewsets.ModelViewSet):
                 last_activity = r["timestamp"]
 
             request.data["zulip_username"] = full_name
-            request.data["total_messages"] = get_messages(zulip_id)
+            request.data["total_messages"] = get_total_messages(zulip_id)
             request.data["last_activity"] = make_aware(datetime.fromtimestamp(last_activity))
             request.data["first_activity"] = first_activity
             request.data["newcomers_messages"] = get_stream_messages("newcomers", zulip_id)
