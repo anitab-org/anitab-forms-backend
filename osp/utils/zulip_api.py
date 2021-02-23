@@ -27,7 +27,7 @@ def get_total_messages(zulip_id: int) -> int:
 
             >>> get_total_messages(5)
             10
-      '''
+    '''
 
     request = {
         "anchor": "newest",
@@ -70,7 +70,7 @@ def get_stream_messages(stream: str, zulip_id: int) -> int:
             >>> get_stream_messages(announce,5)
             10
     '''
-    
+
     request = {
         "anchor": "newest",
         "num_before": 1,
