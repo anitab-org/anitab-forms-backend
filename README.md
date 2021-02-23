@@ -11,6 +11,9 @@ Open Source Programs (OSP) is an application that simplifies the processing and 
 ## API Documentation
 - [Postman Docs](https://documenter.getpostman.com/view/11324046/Szzoaw1q?version=latest)
 
+## Documentation
+Documentation for the project is hosted [here](https://osp-backend-docs.surge.sh/). `Docusaurus` has been used for maintaining the documentation of the project.
+
 ## Setup 
 To setup the project locally go through [this wiki page](https://github.com/anitab-org/open-source-programs-web/wiki/Fork,-Clone,-Remote-and-Pull-Request).
 Make sure you have installed the following:
