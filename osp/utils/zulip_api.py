@@ -6,14 +6,14 @@ client = Client(config_file="download")
 
 
 def get_zulip_user(zulip_id: int) -> dict:
-    '''Takes the target's user ID as an arguement and returns a dictionary containing
+    """Takes the target's user ID as an arguement and returns a dictionary containing
     basic data on the Zulip user associated with that id
 
     Example usage:
 
             >>> get_zulip_user(5)
             {"avatar_url": "...","bot_type": null,... "profile_data":...}
-    '''
+    """
 
     result = client.get_user_by_id(zulip_id)
     print(result)
@@ -21,7 +21,7 @@ def get_zulip_user(zulip_id: int) -> dict:
 
 
 def get_total_messages(zulip_id: int) -> int:
-    ''' Takes the target's user id: int as arguement and returns the total number of messages: int sent by the
+    """Takes the target's user id: int as arguement and returns the total number of messages: int sent by the
     user accociated that id if total messages is less than 5000
       it returns 5000: int if the actual total numbers of messages is greater than 5000
 
@@ -29,7 +29,7 @@ def get_total_messages(zulip_id: int) -> int:
 
             >>> get_total_messages(5)
             10
-    '''
+    """
 
     request = {
         "anchor": "newest",
@@ -43,14 +43,14 @@ def get_total_messages(zulip_id: int) -> int:
 
 
 def get_newest_message(zulip_id: int) -> dict:
-    ''' Takes the target's user ID: int as an arguement and returns a dictionary containing requested information
+    """Takes the target's user ID: int as an arguement and returns a dictionary containing requested information
     about the most recent message sent by user accociated with the given user id
 
     Example usage:
 
             >>> get_newest_message(5)
             {"avatar_url": ...,"bot_type": null, ..., "profile_data":...}
-    '''
+    """
 
     request = {
         "anchor": "newest",
@@ -64,14 +64,14 @@ def get_newest_message(zulip_id: int) -> dict:
 
 
 def get_stream_messages(stream: str, zulip_id: int) -> int:
-    '''It takes stream name: string and target id: int as arguements
+    """It takes stream name: string and target id: int as arguements
     and returns the total number of messages sent on the given stream: int, by user accociated with given user id
 
     Example usage:
 
             >>> get_stream_messages(announce,5)
             10
-    '''
+    """
 
     request = {
         "anchor": "newest",
