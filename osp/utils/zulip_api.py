@@ -2,7 +2,10 @@ from zulip import Client
 
 # By default the API key file you download is named as 'download' by Zulip. You can place
 # this file one directory previous to the cuurent directory your file is in
-client = Client(config_file="download")
+
+
+def get_client():
+    return Client(config_file="download")
 
 
 def get_zulip_user(zulip_id: int) -> dict:
@@ -15,6 +18,7 @@ def get_zulip_user(zulip_id: int) -> dict:
             {"avatar_url": "...","bot_type": null,... "profile_data":...}
     """
 
+    client = get_client()
     result = client.get_user_by_id(zulip_id)
     print(result)
     return result["user"]
@@ -31,6 +35,7 @@ def get_total_messages_count(zulip_id: int) -> int:
             10
     """
 
+    client = get_client()
     request = {
         "anchor": "newest",
         "num_before": 5000,
@@ -52,6 +57,7 @@ def get_newest_message(zulip_id: int) -> dict:
             {"avatar_url": ...,"bot_type": null, ..., "profile_data":...}
     """
 
+    client = get_client()
     request = {
         "anchor": "newest",
         "num_before": 1,
@@ -73,6 +79,7 @@ def get_stream_messages_count(stream: str, zulip_id: int) -> int:
             10
     """
 
+    client = get_client()
     request = {
         "anchor": "newest",
         "num_before": 1,
