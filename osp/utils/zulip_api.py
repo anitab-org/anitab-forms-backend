@@ -20,7 +20,7 @@ def get_zulip_user(zulip_id: int) -> dict:
     return result["user"]
 
 
-def get_total_messages(zulip_id: int) -> int:
+def get_total_messages_count(zulip_id: int) -> int:
     """Takes the target's user id: int as arguement and returns the total number of messages: int sent by the
     user associated with that id if total messages is less than 5000
       it returns 5000: int if the actual total numbers of messages is greater than 5000
