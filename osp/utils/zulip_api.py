@@ -63,7 +63,7 @@ def get_newest_message(zulip_id: int) -> dict:
     return result
 
 
-def get_stream_messages(stream: str, zulip_id: int) -> int:
+def get_stream_messages_count(stream: str, zulip_id: int) -> int:
     """It takes stream name: string and target id: int as arguements
     and returns the total number of messages sent on the given stream: int, by user associated with given user id
 
