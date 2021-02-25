@@ -6,7 +6,7 @@ client = Client(config_file="download")
 
 
 def get_zulip_user(zulip_id: int) -> dict:
-    """Takes the target's user ID as an arguement and returns a dictionary containing
+    """Takes the target's user ID as an argument and returns a dictionary containing
     basic data on the Zulip user associated with that id
 
     Example usage:
