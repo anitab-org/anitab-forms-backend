@@ -134,9 +134,7 @@ Run ``sudo docker-compose up`` from the root directory of project. Navigate to `
 - To **interact** with docker containers use ``docker exec -it {container id} bash`` from your terminal. Container id can be found using ``docker ps``.
 
 ## Documentation
-
 Documentation for the project is hosted [here](https://osp-backend-docs.surge.sh/). `Docusaurus` has been used for maintaining the documentation of the project.
-
 - Read the [Meeting minutes](https://docs.google.com/document/d/1YF13IbBrU1ln4ZF1fOpgb-xGRgIF6tZLSjIBQgDmN7k/edit) notes from our open sessions about the project.
 - For setting up the project locally watch [this video](https://youtu.be/_b2RQGbYN9w).
 - To learn about the project's initial features, watch the video of [project demonstration](https://youtu.be/3A746GppZ0Y).
