@@ -11,9 +11,6 @@ Open Source Programs (OSP) is an application that simplifies the processing and 
 ## API Documentation
 - [Postman Docs](https://documenter.getpostman.com/view/11324046/Szzoaw1q?version=latest)
 
-## Documentation
-Documentation for the project is hosted [here](https://osp-backend-docs.surge.sh/). `Docusaurus` has been used for maintaining the documentation of the project.
-
 ## Setup 
 To setup the project locally go through [this wiki page](https://github.com/anitab-org/open-source-programs-web/wiki/Fork,-Clone,-Remote-and-Pull-Request).
 Make sure you have installed the following:
@@ -137,6 +134,8 @@ Run ``sudo docker-compose up`` from the root directory of project. Navigate to `
 - To **interact** with docker containers use ``docker exec -it {container id} bash`` from your terminal. Container id can be found using ``docker ps``.
 
 ## Documentation
+
+Documentation for the project is hosted [here](https://osp-backend-docs.surge.sh/). `Docusaurus` has been used for maintaining the documentation of the project.
 
 - Read the [Meeting minutes](https://docs.google.com/document/d/1YF13IbBrU1ln4ZF1fOpgb-xGRgIF6tZLSjIBQgDmN7k/edit) notes from our open sessions about the project.
 - For setting up the project locally watch [this video](https://youtu.be/_b2RQGbYN9w).
