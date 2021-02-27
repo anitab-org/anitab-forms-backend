@@ -45,6 +45,16 @@ Next follow these instructions.
     \c osp;
     GRANT ALL PRIVILEGES ON DATABASE osp to osp;
     ```
+    You may run the following commands for local setup of DB in Windows:
+
+    ```
+    cd open-source-programs-backend
+    psql -U postgres
+    CREATE ROLE osp LOGIN PASSWORD 'osp' NOINHERIT CREATEDB;
+    CREATE DATABASE osp;
+    \c osp;
+    GRANT ALL PRIVILEGES ON DATABASE osp to osp;
+    ```
 2. **Set the environment variables:** You need to download Zulip API key file from your user-settings on Zulip. The file you download is named as `download` or rename it to `download`. Place that download file in the project's directory. For more information follow [Environment Variables](#Environment-Variables) section.
 
 3. Move into the project's directory.
@@ -55,25 +65,48 @@ Next follow these instructions.
 4. Create virtual environment (this is not a hard requirement, but its advisable)
     ```
     virtualenv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
     ```
-5. To run the migrations run: 
+     Activating virtual environment for Linux users:
+     ```
+     source venv/bin/activate
+     ```
+     Activating virtual environment for Git Bash users:
+     ```
+     source ./venv/Scripts/activate
+     ``` 
+     Activating virtual environment for Windows users:   
+     ``` 
+     venv\Scripts\activate
+     ```
+5. To install dependencies:
+    ```
+    pip install -r requirements.txt
+    ```	
+6. To run the migrations run: 
    ```
    python manage.py migrate
    ```
-6. To run the server:
+7. To run the server:
     ```
     python manage.py runserver
     ```
-7. Navigate to `http://localhost:8000/` in your browser.
-8. To change the port you may run `python manage.py runserver <port_number>`
-9. To run the migrations run: `python manage.py migrate`
-10. You can terminate the process by `Ctrl+C` in your terminal.
+8. Navigate to `http://localhost:8000/` in your browser.
+9. To change the port you may run `python manage.py runserver <port_number>`
+10. To run the migrations run: `python manage.py migrate`
+11. You can terminate the process by `Ctrl+C` in your terminal.
 
 Follow the given instructions for Login into the app.
 
-1. You can register a new user by setting up SendGrid details in the `settings.py`, you can take a reference from [here](https://sendgrid.com/docs/for-developers/sending-email/integrating-with-the-smtp-api/)
+1. You can register a new user by making a POST request on `/api/token_auth/register/`. After this confirmation e-mail will be sent to standard output (terminal). To receive confirmation e-mail using Sendgrid see [this](#environment-variables). The content of the request must be like this:
+    ```json
+    {
+        "username":"< YOUR USERNAME >",
+        "email":"< YOUR EMAIL >",
+        "password":"< YOUR PASSWORD >",
+        "confirm_password":"< YOUR PASSWORD >"  
+    }
+    ```
+
 
 2. To create the superuser run:
    ```
@@ -85,7 +118,7 @@ Follow the given instructions for Login into the app.
 
 1. `Zulip API KEY file` - You can go [Zulip](https://anitab-org.zulipchat.com) and follow [these instructions to get your API KEY](https://zulip.com/api/api-keys#get-your-api-key). Download the file and save it in the root folder of the project with the name `download`.
 
-2. `SENDGRID_API_KEY` - Follow the given steps to create a Sendgrid API key:
+2. `SENDGRID_API_KEY` - It is optional for development. To use this variable make `DEBUG=False` in `settings.py`. Follow the given steps to create a Sendgrid API key:
 
 	1. Go to [Sendgrid's website](https://app.sendgrid.com/guide)
 	2. Navigate to Settings on the left navigation bar, and then - select API Keys.
