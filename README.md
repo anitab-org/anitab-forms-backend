@@ -192,4 +192,4 @@ You can reach the admins, maintainers and our community on [AnitaB.org Open Sour
 ## LICENSE
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-To know more about it you can read   [GPL v3](https://github.com/anitab-org/open-source-programs-backend/blob/develop/LICENSE) guidelines.
+Open Source Programs Backend is licensed under the GNU General Public License v3.0. To know more about it you can read   [GPL v3](https://github.com/anitab-org/open-source-programs-backend/blob/develop/LICENSE) guidelines.
