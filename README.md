@@ -95,8 +95,11 @@ Follow the given instructions for Login into the app.
 	6. Click Create & View.
 	7. The API KEY is generated and displayed to you just once. So be sure to copy and save it somewhere.
 
+3. `DJANGO_DEBUG` - Set its value to `False` for deployment (not needed for development).
+
 Add it to your .env file as follows:
 ```
+export DJANGO_DEBUG=False
 export SENDGRID_API_KEY=<your-sendgrid-api-key>
 ```
 

@@ -29,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "7ibm!g0j@gs7kszwav!6$*lar(+!!l3tpm@09s%csl2bj)l+p4"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ["https://open-source-programs-backend.herokuapp.com"]
 
