@@ -3,7 +3,7 @@ from django.core.mail import send_mail
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -14,10 +14,8 @@ from token_auth.views.token import account_activation_token
 User = get_user_model()
 
 
+@permission_classes([AllowAny])
 class RegisterView(APIView):
-
-    permission_classes = [AllowAny]
-
     def post(self, request, *args, **kwargs):
         """
         Function for creating user account
@@ -40,6 +38,7 @@ class RegisterView(APIView):
         return Response({"Please confirm your email to Login succesfully"}, status.HTTP_201_CREATED)
 
     @api_view(("GET",))
+    @permission_classes([AllowAny])
     def activate(request, uidb64, token):
         """
         Function for account activation
