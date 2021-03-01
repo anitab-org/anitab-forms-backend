@@ -14,6 +14,6 @@ Make sure contributors are respecting the Contribution Guidelines. If they don't
 - **Make sure that, if the PR changes actual code, to properly test it or wait for someone to confirm the behavior**
 
 ## Merging PRs
-- Minimum 2 approvals are needed to get a PR merged
+- Minimum 2 approvals are needed to get a PR merged.
 - Select **Squash and Merge**.
-- Edit commit if necessary to follow our [Commit Message style guide](https://github.com/anitab-org/open-source-programs-web/wiki/Commit-Message-Style-Guide) and leave the PR id in the message.
+- Edit commit if necessary to follow our [Commit Message style guide](https://osp-backend-docs.surge.sh/docs/Commit-Message-Style-Guide) and leave the PR id in the message.
