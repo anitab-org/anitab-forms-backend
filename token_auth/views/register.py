@@ -56,4 +56,3 @@ class RegisterView(APIView):
             return Response({"Your email is confirmed!"}, status=status.HTTP_200_OK)
         else:
             return Response({"Invalid link"}, status=status.HTTP_400_BAD_REQUEST)
-            
