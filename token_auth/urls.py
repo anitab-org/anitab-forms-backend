@@ -2,6 +2,7 @@ from django.conf.urls import url
 from django.urls import path
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
+from token_auth.views.github_oauth import GithubLogin
 from token_auth.views.register import RegisterView
 
 urlpatterns = [
@@ -14,4 +15,5 @@ urlpatterns = [
     # login URLs
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("github/", GithubLogin.as_view(), name="github_login"),
 ]
