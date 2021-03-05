@@ -128,13 +128,13 @@ Follow the given instructions for Login into the app.
 	6. Click Create & View.
 	7. The API KEY is generated and displayed to you just once. So be sure to copy and save it somewhere.
 
-3. `SECRET_KEY`  - Add your secret key in the .env file. 
-
 Add it to your .env file as follows:
 ```
-SECRET_KEY=<your-secret-key>
 export SENDGRID_API_KEY=<your-sendgrid-api-key>
 ```
+
+3. `SECRET_KEY`  - This environment variable is required for running the backend. Add `SECRET_KEY` in `.env` file or export it by using `export SECRET_KEY=<YOUR SECRET KEY>`.
+
 
 ## Testing
 
