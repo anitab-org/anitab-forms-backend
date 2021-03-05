@@ -41,6 +41,10 @@ jobs:
     - name: Creating Zulip API key
       run: echo -e "${{ secrets.ZULIP_API_KEY }}" >> download
 
+    - name: Creating SECRET_KEY 
+      env: 
+        SECRET_KEY : "t+bsy=)sq^1^t(+m)l&9b*pil_s#(86p9l^vw!vq9$9)15d1p4"
+
     - name: Migrating Test Database
       run: python manage.py migrate
 
