@@ -3,7 +3,6 @@ id: Coding-Standards
 title: Coding Standards
 ---
 
-# OSP Coding Standards
 Python is the major language in the backend. So, the following are the coding practices and standards which are being used in the project.
 
 ## Style Guide for Python

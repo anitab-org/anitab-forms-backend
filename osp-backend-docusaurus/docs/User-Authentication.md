@@ -3,7 +3,6 @@ id: User-Authentication
 title: User Authentication
 ---
 
-## User Authentication
 To be able to use the application, a user needs to
 
 - Register
