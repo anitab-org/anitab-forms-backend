@@ -72,7 +72,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Anita.Borg`,
+      copyright: `Copyright © ${new Date().getFullYear()} AnitaB.org`,
     },
   },
   presets: [

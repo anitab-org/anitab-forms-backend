@@ -16,4 +16,4 @@ Make sure contributors are respecting the Contribution Guidelines. If they don't
 ## Merging PRs
 - Minimum 2 approvals are needed to get a PR merged.
 - Select **Squash and Merge**.
-- Edit commit if necessary to follow our [Commit Message style guide](https://osp-backend-docs.surge.sh/docs/Commit-Message-Style-Guide) and leave the PR id in the message.
+- Edit commit if necessary to follow our [Commit Message style guide](./Commit-Message-Style-Guide.md) and leave the PR id in the message.
