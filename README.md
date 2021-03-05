@@ -132,7 +132,7 @@ Follow the given instructions for Login into the app.
 
 Add it to your .env file as follows:
 ```
-export SECRET_KEY=<your-secret-key>
+SECRET_KEY=<your-secret-key>
 export SENDGRID_API_KEY=<your-sendgrid-api-key>
 ```
 
