@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "osp",
     "token_auth",
-    # For Socail Authentication
+    # For Social Authentication
     "dj_rest_auth",
     "django.contrib.sites",
     "allauth",
