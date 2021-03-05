@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
 from datetime import timedelta
 
+import django_heroku
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -29,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "7ibm!g0j@gs7kszwav!6$*lar(+!!l3tpm@09s%csl2bj)l+p4"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
 
 ALLOWED_HOSTS = ["https://open-source-programs-backend.herokuapp.com"]
 
@@ -161,4 +161,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
-
