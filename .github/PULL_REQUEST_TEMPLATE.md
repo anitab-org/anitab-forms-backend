@@ -32,8 +32,7 @@ Fixes #ISSUE
 - [ ] I have commented my code or provided relevant documentation, particularly in hard-to-understand areas
 - [ ] I have made corresponding changes to the documentation
 - [ ] Any dependent changes have been merged
-- [ ] I have updated Postman API inside [docs](https://github.com/anitab-org/open-source-programs-backend/blob/develop/docs/OSP.postman_collection.json)
-- [ ] I have updated dependencies in `requirements.txt`
+- [ ] I have written Kotlin Docs whenever is applicable
 
 
 **Code/Quality Assurance Only**
