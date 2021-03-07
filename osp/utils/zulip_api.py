@@ -3,12 +3,15 @@ from zulip import Client
 # By default the API key file you download is named as 'download' by Zulip. You can place
 # this file one directory previous to the cuurent directory your file is in
 
-def get_self_zulip_id():
-    result =  client.get_profile()
-    return result["user_id"]
 
 def get_client():
     return Client(config_file="download")
+
+
+def get_self_zulip_id():
+    client = get_client()
+    result = client.get_profile()
+    return result["user_id"]
 
 
 def get_zulip_user(zulip_id: int) -> dict:

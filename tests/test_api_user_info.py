@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from rest_framework import status
 from rest_framework.test import APIClient, APITestCase
+
 from osp.utils.zulip_api import get_self_zulip_id
 
 User = get_user_model()
@@ -58,12 +59,12 @@ class UserInfoTests(APITestCase):
         body = {"name": "Test User 1 Full Name", "user_type": "admin", "zulip_id": self.zulip_id}
         response = self.client.post("http://localhost:8000/api/info/", body, format="json")
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertNotEqual(response.data,[])
-        
+        self.assertNotEqual(response.data, [])
+
         response = self.client.get("http://localhost:8000/api/info/", format="json")
         response.data = response.data[0]
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertNotEqual(response.data,[])
+        self.assertNotEqual(response.data, [])
         self.assertEqual(response.data["name"], body["name"])
         self.assertEqual(response.data["user_type"], body["user_type"])
         self.assertEqual(response.data["zulip_id"], body["zulip_id"])

@@ -26,7 +26,7 @@ Make sure you have installed the following:
 
 Next follow these instructions.
 
-1.1 **Database Setup:** Before starting with the project create a db in you local using PostgreSQL with the following details. Refer to `main/settings.py` if you have any confusion.
+1. **Database Setup:** Before starting with the project create a db in you local using PostgreSQL with the following details. Refer to `main/settings.py` if you have any confusion.
 
     ```
     NAME: osp
@@ -139,7 +139,7 @@ export SENDGRID_API_KEY=<your-sendgrid-api-key>
 ## Testing
 
 **Test Database:** 
-    You may run the following commands:
+    For creating a database while testing you have to give database creation permission to user `osp`. You may run the following commands:
 
     ```
     cd open-source-programs-backend
