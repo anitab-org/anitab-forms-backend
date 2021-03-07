@@ -4,7 +4,7 @@ from dj_rest_auth.registration.views import SocialLoginView
 from django.conf import settings
 
 
-class GithubLogin(SocialLoginView):
+class GitHubLogin(SocialLoginView):
     authentication_classes = []
     adapter_class = GitHubOAuth2Adapter
     callback_url = settings.GITHUB_CALLBACK_URL

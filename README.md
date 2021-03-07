@@ -146,7 +146,7 @@ export SENDGRID_API_KEY=<your-sendgrid-api-key>
 3. Go to **Sites dashboard** in admin site. (**URL**: http://localhost:8000/admin/sites/site/).
 4. Click on `Add site` button and fill in the information as given in the image.
    ![site_id](https://user-images.githubusercontent.com/56037184/109974910-0fa79b00-7d20-11eb-9826-44fdf6d770f9.png)
-   **Note**: After saving this if the site id is not `2` then change the `SITE_ID` in settings.py with the new site id.
+   **Note**: After saving this if the site id is not `1` then change the `SITE_ID` in settings.py with the new site id.
 5. After this go to **Social Applications Dashboard**. (**URL**: http://localhost:8000/admin/socialaccount/socialapp/).
 6. Add the credentials that you get after creating the GitHub app. Fill in the information as given in the image.
    ![social_add](https://user-images.githubusercontent.com/56037184/109975941-35816f80-7d21-11eb-9a8f-205953306c83.png)
