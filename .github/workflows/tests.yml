@@ -42,7 +42,7 @@ jobs:
       run: echo -e "${{ secrets.ZULIP_API_KEY }}" >> download
 
     - name: Exporting Secret Key
-      run: echo -e "SECRET_KEY=${{ secrets.GITHUB_TOKEN }}" >> .env
+      run: echo -e "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
 
     - name: Migrating Test Database
       run: python manage.py migrate
