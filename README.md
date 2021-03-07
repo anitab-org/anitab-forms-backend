@@ -133,6 +133,9 @@ Add it to your .env file as follows:
 export SENDGRID_API_KEY=<your-sendgrid-api-key>
 ```
 
+3. `SECRET_KEY`  - This environment variable is required for running the backend. Add `SECRET_KEY` in `.env` file or export it by using `export SECRET_KEY=<YOUR SECRET KEY>`.
+
+
 ## Testing
 
 To run the tests run: `python manage.py test`.
