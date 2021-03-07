@@ -4,6 +4,9 @@ from zulip import Client
 # this file one directory previous to the cuurent directory your file is in
 client = Client(config_file="download")
 
+def get_self_zulip_id():
+    result =  client.get_profile()
+    return result["user_id"]
 
 def get_zulip_user(zulip_id):
     result = client.get_user_by_id(zulip_id)
