@@ -15,7 +15,7 @@ Open Source Programs (OSP) is an [original project](https://summerofcode.withgoo
 - Add Frontend to support APIs
 - Add relevant documentation and tests for the same.
 
-[Backend Repo](https://github.com/anitab-org/open-source-programs-backend) [Frontend Repo](https://github.com/anitab-org/open-source-programs-web)
+[Backend Repo](https://github.com/anitab-org/anitab-forms-backend) [Frontend Repo](https://github.com/anitab-org/open-source-programs-web)
 
 ### Documentation
 
@@ -59,7 +59,7 @@ During the GSoC period, I penned down my experiences through Medium Blogs. They 
 
 ### Contributions during GSoC
 - [Frontend PRs from June 1, 2020 - August 31, 2020](https://github.com/anitab-org/open-source-programs-web/pulls?q=is%3Apr+author%3Abismitaguha+created%3A%3E2020-06-01+created%3A%3C2020-08-31)
-- [Backend PRs from June 1, 2020 - August 31, 2020](https://github.com/anitab-org/open-source-programs-backend/pulls?q=is%3Apr+author%3Abismitaguha+created%3A%3E2020-06-01+created%3A%3C2020-08-31)
+- [Backend PRs from June 1, 2020 - August 31, 2020](https://github.com/anitab-org/anitab-forms-backend/pulls?q=is%3Apr+author%3Abismitaguha+created%3A%3E2020-06-01+created%3A%3C2020-08-31)
 
 ### Important Contributions
 ### Frontend Repo
@@ -78,13 +78,13 @@ During the GSoC period, I penned down my experiences through Medium Blogs. They 
 ### Backend Repo
 | #PR     | Feature Integrated                                                 |
 |---------|--------------------------------------------------------------------|
-| [#6](https://github.com/anitab-org/open-source-programs-backend/pull/6)  | Project Setup with Django |
-| [#19](https://github.com/anitab-org/open-source-programs-backend/pull/19) | Registration API |
-| [#22](https://github.com/anitab-org/open-source-programs-backend/pull/22) | Login API and send email feature |
-| [#28](https://github.com/anitab-org/open-source-programs-backend/pull/28) | CRUD operations for form and field APIs |
-| [#31](https://github.com/anitab-org/open-source-programs-backend/pull/31) | Creating and editing of form responses |
-| [#36](https://github.com/anitab-org/open-source-programs-backend/pull/36) | Feature to search submissions list and viewing of user profile |
-| [#37](https://github.com/anitab-org/open-source-programs-backend/pull/37) | Feature to view and update Zulip Stats |
+| [#6](https://github.com/anitab-org/anitab-forms-backend/pull/6)  | Project Setup with Django |
+| [#19](https://github.com/anitab-org/anitab-forms-backend/pull/19) | Registration API |
+| [#22](https://github.com/anitab-org/anitab-forms-backend/pull/22) | Login API and send email feature |
+| [#28](https://github.com/anitab-org/anitab-forms-backend/pull/28) | CRUD operations for form and field APIs |
+| [#31](https://github.com/anitab-org/anitab-forms-backend/pull/31) | Creating and editing of form responses |
+| [#36](https://github.com/anitab-org/anitab-forms-backend/pull/36) | Feature to search submissions list and viewing of user profile |
+| [#37](https://github.com/anitab-org/anitab-forms-backend/pull/37) | Feature to view and update Zulip Stats |
 
 ### Work left to do
 
