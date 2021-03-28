@@ -190,6 +190,16 @@ For more information, you can read [backend project wiki](https://github.com/ani
 ## Contributing
 Please read the [Contributing guidelines](.github/CONTRIBUTING.md), [Code of Conduct](CODE_OF_CONDUCT.md) and [Reporting Guidelines](REPORTING_GUIDELINES.md)
 
+## Contributors
+
+Thanks goes to these people ([emoji key](https://github.com/all-contributors/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
+Contributions of any kind welcome!
+
 ## Contact
 You can reach the admins, maintainers and our community on [AnitaB.org Open Source Zulip](https://anitab-org.zulipchat.com/). If you are interested in contributing to the OSP project, you may join the stream [#open-source-progs](https://anitab-org.zulipchat.com/#narrow/stream/237907-open-source-progs) and ask questions or intereact with the community. Join Us!
 
