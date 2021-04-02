@@ -38,9 +38,6 @@ jobs:
         pip install -r requirements.txt
         pip install coverage==5.4
 
-    - name: Exporting Secret Key
-      run: echo -e "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
-
     - name: Migrating Test Database
       run: python manage.py migrate
 
