@@ -195,6 +195,17 @@ Please read the [Contributing guidelines](.github/CONTRIBUTING.md), [Code of Con
 Thanks goes to these people ([emoji key](https://github.com/all-contributors/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://6002bd83fc21bdb414a1a7c3--aaishprafolio.netlify.app/"><img src="https://avatars.githubusercontent.com/u/66299533?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shipra Verma </b></sub></a><br /><a href="#maintenance-Aaishpra" title="Maintenance">🚧</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
