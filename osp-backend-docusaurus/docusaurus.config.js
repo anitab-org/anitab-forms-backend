@@ -27,7 +27,7 @@ module.exports = {
           position:'right',
         },
         {
-          href:'https://github.com/anitab-org/open-source-programs-backend',
+          href:'https://github.com/anitab-org/anitab-forms-backend',
           label:'Github',
           position:'right',
         },
@@ -63,7 +63,7 @@ module.exports = {
           items: [
             {
               label: 'Github',
-              href: 'https://github.com/anitab-org/open-source-programs-backend',
+              href: 'https://github.com/anitab-org/anitab-forms-backend',
             },
             {
               label: 'Blog',
@@ -83,7 +83,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/anitab-org/open-source-programs-backend/osp-backend-docusaurus',
+            'https://github.com/anitab-org/anitab-forms-backend/osp-backend-docusaurus',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

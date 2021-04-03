@@ -1,10 +1,10 @@
 # Open Source Programs (Backend)
 
-![Build Status](https://github.com/anitab-org/open-source-programs-backend/workflows/Tests%20Build/badge.svg)
+![Build Status](https://github.com/anitab-org/anitab-forms-backend/workflows/Tests%20Build/badge.svg)
 [![project chat](https://img.shields.io/badge/zulip-join_chat-brightgreen.svg)](https://anitab-org.zulipchat.com/#narrow/stream/237907-open-source-progs)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
-[![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/anitab-org/open-source-programs-backend/)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/anitab-org/open-source-programs-backend)
+[![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/anitab-org/anitab-forms-backend/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/anitab-org/anitab-forms-backend)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
 [![codecov](https://codecov.io/gh/anitab-org/anitab-forms-backend/branch/develop/graph/badge.svg)](https://codecov.io/gh/anitab-org/anitab-forms-backend)
 
@@ -19,7 +19,7 @@ Open Source Programs (OSP) is an application that simplifies the processing and 
 - [Postman Docs](https://documenter.getpostman.com/view/11324046/Szzoaw1q?version=latest)
 
 ## Setup 
-To setup the project locally go through [this wiki page](https://github.com/anitab-org/open-source-programs-web/wiki/Fork,-Clone,-Remote-and-Pull-Request).
+To setup the project locally go through [this wiki page](https://github.com/anitab-org/anitab-forms-web/wiki/Fork,-Clone,-Remote-and-Pull-Request).
 Make sure you have installed the following:
 * [pip](https://pip.pypa.io/en/stable/installing/)
 * [virtualenv](https://pypi.org/project/virtualenv/)
@@ -38,7 +38,7 @@ Next follow these instructions.
     You may run the following commands for local setup of DB in Linux:
 
     ```
-    cd open-source-programs-backend
+    cd anitab-forms-backend
     sudo -i -u postgres
     createuser osp --pwprompt
     psql
@@ -49,7 +49,7 @@ Next follow these instructions.
     You may run the following commands for local setup of DB in Windows:
 
     ```
-    cd open-source-programs-backend
+    cd anitab-forms-backend
     psql -U postgres
     CREATE ROLE osp LOGIN PASSWORD 'osp' NOINHERIT CREATEDB;
     CREATE DATABASE osp;
@@ -61,7 +61,7 @@ Next follow these instructions.
 3. Move into the project's directory.
 
     ```
-    cd open-source-programs-backend
+    cd anitab-forms-backend
     ```
 4. Create virtual environment (this is not a hard requirement, but its advisable)
     ```
@@ -185,7 +185,7 @@ Documentation for the project is hosted [here](https://osp-backend-docs.surge.sh
 - [Timeline deliverables for the project during GSoC 2020](https://docs.google.com/document/d/1xl9F5kMZrKo4mNhnP0SKpk7WkQc8PLca1ym7EZMpjSc/edit).
 - [GSoC 2020 Project Meeting Minutes](https://docs.google.com/document/d/1YF13IbBrU1ln4ZF1fOpgb-xGRgIF6tZLSjIBQgDmN7k/edit) [Old].
 
-For more information, you can read [backend project wiki](https://github.com/anitab-org/open-source-programs-backend/wiki) and the [web project wiki](https://github.com/anitab-org/open-source-programs-web/wiki).
+For more information, you can read [backend project wiki](https://github.com/anitab-org/anitab-forms-backend/wiki) and the [web project wiki](https://github.com/anitab-org/anitab-forms-web/wiki).
 
 ## Contributing
 Please read the [Contributing guidelines](.github/CONTRIBUTING.md), [Code of Conduct](CODE_OF_CONDUCT.md) and [Reporting Guidelines](REPORTING_GUIDELINES.md)
