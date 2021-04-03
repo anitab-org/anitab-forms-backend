@@ -18,7 +18,7 @@ Open Source Programs (OSP) is an application that simplifies the processing and 
 - [Postman Docs](https://documenter.getpostman.com/view/11324046/Szzoaw1q?version=latest)
 
 ## Setup 
-To setup the project locally go through [this wiki page](https://github.com/anitab-org/open-source-programs-web/wiki/Fork,-Clone,-Remote-and-Pull-Request).
+To setup the project locally go through [this wiki page](https://github.com/anitab-org/anitab-forms-web/wiki/Fork,-Clone,-Remote-and-Pull-Request).
 Make sure you have installed the following:
 * [pip](https://pip.pypa.io/en/stable/installing/)
 * [virtualenv](https://pypi.org/project/virtualenv/)
@@ -184,7 +184,7 @@ Documentation for the project is hosted [here](https://osp-backend-docs.surge.sh
 - [Timeline deliverables for the project during GSoC 2020](https://docs.google.com/document/d/1xl9F5kMZrKo4mNhnP0SKpk7WkQc8PLca1ym7EZMpjSc/edit).
 - [GSoC 2020 Project Meeting Minutes](https://docs.google.com/document/d/1YF13IbBrU1ln4ZF1fOpgb-xGRgIF6tZLSjIBQgDmN7k/edit) [Old].
 
-For more information, you can read [backend project wiki](https://github.com/anitab-org/anitab-forms-backend/wiki) and the [web project wiki](https://github.com/anitab-org/open-source-programs-web/wiki).
+For more information, you can read [backend project wiki](https://github.com/anitab-org/anitab-forms-backend/wiki) and the [web project wiki](https://github.com/anitab-org/anitab-forms-web/wiki).
 
 ## Contributing
 Please read the [Contributing guidelines](.github/CONTRIBUTING.md), [Code of Conduct](CODE_OF_CONDUCT.md) and [Reporting Guidelines](REPORTING_GUIDELINES.md)
