@@ -136,6 +136,17 @@ export SENDGRID_API_KEY=<your-sendgrid-api-key>
 
 3. `SECRET_KEY`  - This environment variable is required for running the backend. Add `SECRET_KEY` in `.env` file or export it by using `export SECRET_KEY=<YOUR SECRET KEY>`.
 
+4. `DB_BACKEND` - This environment variable is used here to get the the backend class of the database. Different databases have different backends in django. You can read more about it [here](https://docs.djangoproject.com/en/3.1/ref/databases/). Its default backend is postgresql.
+
+5. `DB_NAME` - This environment variable is required to get the name of the database. By default, its value is `osp`.
+
+6. `DB_USERNAME` - This environment variable is required to get the **USERNAME** of the user with all privileges to the above mentioned database.
+
+7. `DB_PASSWORD` - This environment variable is required to get the **password** of the above mentioned user i.e. the user with all the privileges to the database.
+
+8. `DB_HOST` - It is used to get the database host from the env variables. For `docker` it must be set to `db` otherwise its default value is `localhost`.
+
+9. `DB_PORT` - It is used to get the database port from the env variables. Different database backends have different ports. Its default value is of postgresql port i.e. `5432`.
 
 ## Testing
 
