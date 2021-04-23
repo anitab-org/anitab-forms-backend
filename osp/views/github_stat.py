@@ -35,7 +35,10 @@ class GithubStatView(viewsets.ModelViewSet):
                 },
                 status=status.HTTP_404_NOT_FOUND,
             )
-        github_stat = GithubStat.objects.get(user_information__user_id=user.id)
+        try:
+            github_stat = GithubStat.objects.get(user_information__user_id=user.id)
+        except GithubStat.DoesNotExist:
+            github_stat = None
         github_stat_data = self.github_client.find_stats(user_information.github_username)
         if "message" in github_stat_data:
             return Response({"message": github_stat_data["message"]}, status=github_stat_data["status"])
