@@ -31,7 +31,7 @@ SECRET_KEY = "7ibm!g0j@gs7kszwav!6$*lar(+!!l3tpm@09s%csl2bj)l+p4"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DJANGO_DEBUG") != "False"
 
-ALLOWED_HOSTS = ["https://open-source-programs-backend.herokuapp.com"]
+ALLOWED_HOSTS = ["anitab-forms-backend.herokuapp.com"]
 
 
 # Application definition
@@ -105,7 +105,8 @@ EMAIL_HOST_USER = "apikey"
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 AUTH_USER_MODEL = "token_auth.User"
 
