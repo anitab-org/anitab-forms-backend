@@ -117,6 +117,31 @@ Follow the given instructions for Login into the app.
 
 ## Environment Variables
 
+Make sure you create .env using .env.template and update the values of corresponding environment variables:
+
+```
+SECRET_KEY=<your-secret-key>
+EMAIL_USER=<email-address>
+EMAIL_PASSWORD=<your-password>
+
+```
+
+This environment variable is optional for development
+```
+SENDGRID_API_KEY=<your-sendgrid-api-key>
+```
+
+Where the database is necessary, you will need to provide the DB details in the .env file
+
+ ```
+DB_BACKEND=postgresql
+DB_NAME=<db-name>
+DB_USERNAME=<db-user-username>
+DB_PASSWORD=<db-user-password>
+DB_HOST=localhost
+DB_PORT=5432
+```
+
 1. `Zulip API KEY file` - You can go [Zulip](https://anitab-org.zulipchat.com) and follow [these instructions to get your API KEY](https://zulip.com/api/api-keys#get-your-api-key). Download the file and save it in the root folder of the project with the name `download`.
 
 2. `SENDGRID_API_KEY` - It is optional for development. To use this variable make `DEBUG=False` in `settings.py`. Follow the given steps to create a Sendgrid API key:
