@@ -117,12 +117,12 @@ Follow the given instructions for Login into the app.
 
 ## Environment Variables
 
-Make sure you create .env using .env.template and update the values of corresponding environment variables:
+Use `.env.template` file to make a new `.env` file and add the following details:
 
 ```
 SECRET_KEY=<your-secret-key>
 EMAIL_USER=<email-address>
-EMAIL_PASSWORD=<your-password>
+EMAIL_PASSWORD=<your-api-key>
 
 ```
 
@@ -131,13 +131,13 @@ This environment variable is optional for development
 SENDGRID_API_KEY=<your-sendgrid-api-key>
 ```
 
-Where the database is necessary, you will need to provide the DB details in the .env file
+Where the database is necessary, you will need to provide the following DB details in the `.env` file
 
  ```
 DB_BACKEND=postgresql
-DB_NAME=<db-name>
-DB_USERNAME=<db-user-username>
-DB_PASSWORD=<db-user-password>
+DB_NAME=<your-db-name or osp>
+DB_USERNAME=<your-db-username or osp>
+DB_PASSWORD=<your-db-password or osp>
 DB_HOST=localhost
 DB_PORT=5432
 ```
