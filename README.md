@@ -122,7 +122,6 @@ Use `.env.template` file to make a new `.env` file and add the following details
 ```
 SECRET_KEY=<your-secret-key>
 EMAIL_USER=<email-address>
-EMAIL_PASSWORD=<your-api-key>
 
 ```
 
