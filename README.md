@@ -121,8 +121,8 @@ Use `.env.template` file to make a new `.env` file and add the following details
 
 ```
 SECRET_KEY=<your-secret-key>
-EMAIL_USER=<email-address>
-
+EMAIL_USER=<your-email-address>
+EMAIL_PASSWORD=<your-api-key>
 ```
 
 This environment variable is optional for development
@@ -136,9 +136,6 @@ Where the database is necessary, you will need to provide the following DB detai
 DB_BACKEND=postgresql
 DB_NAME=<your-db-name or osp>
 DB_USERNAME=<your-db-username or osp>
-DB_PASSWORD=<your-db-password or osp>
-DB_HOST=localhost
-DB_PORT=5432
 ```
 
 1. `Zulip API KEY file` - You can go [Zulip](https://anitab-org.zulipchat.com) and follow [these instructions to get your API KEY](https://zulip.com/api/api-keys#get-your-api-key). Download the file and save it in the root folder of the project with the name `download`.

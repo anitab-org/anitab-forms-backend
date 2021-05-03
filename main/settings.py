@@ -102,7 +102,7 @@ else:
     SENDGRID_SANDBOX_MODE_IN_DEBUG = False
     SENDGRID_ECHO_TO_STDOUT = True
     EMAIL_HOST = "smtp.sendgrid.net"
-    EMAIL_HOST_USER = os.getenv("EMAIL_USER","apikey")
+    EMAIL_HOST_USER = os.getenv("EMAIL_USER", "apikey")
     EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
