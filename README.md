@@ -116,26 +116,12 @@ Follow the given instructions for Login into the app.
    Fill up the things it asked to and then Login into the app.
 
 ## Environment Variables
-
-Use `.env.template` file to make a new `.env` file and add the following details:
+Use .env.template file to make a new .env file. You can read about environment variables used in this [here](https://github.com/anitab-org/anitab-forms-backend/blob/develop/main/settings.py).
 
 ```
 SECRET_KEY=<your-secret-key>
 EMAIL_USER=<your-email-address>
 EMAIL_PASSWORD=<your-api-key>
-```
-
-This environment variable is optional for development
-```
-SENDGRID_API_KEY=<your-sendgrid-api-key>
-```
-
-Where the database is necessary, you will need to provide the following DB details in the `.env` file
-
- ```
-DB_BACKEND=postgresql
-DB_NAME=<your-db-name or osp>
-DB_USERNAME=<your-db-username or osp>
 ```
 
 1. `Zulip API KEY file` - You can go [Zulip](https://anitab-org.zulipchat.com) and follow [these instructions to get your API KEY](https://zulip.com/api/api-keys#get-your-api-key). Download the file and save it in the root folder of the project with the name `download`.
