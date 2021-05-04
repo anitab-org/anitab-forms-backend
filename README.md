@@ -83,18 +83,20 @@ Next follow these instructions.
     ```
     pip install -r requirements.txt
     ```	
-6. To run the migrations run: 
+6. Make sure you create `.env` using `.env.template` and update the values of corresponding environment variables or make sure you exported the following [environment variables](#Environment-Variables). 
+
+7. To run the migrations run: 
    ```
    python manage.py migrate
    ```
-7. To run the server:
+8. To run the server:
     ```
     python manage.py runserver
     ```
-8. Navigate to `http://localhost:8000/` in your browser.
-9. To change the port you may run `python manage.py runserver <port_number>`
-10. To run the migrations run: `python manage.py migrate`
-11. You can terminate the process by `Ctrl+C` in your terminal.
+9. Navigate to `http://localhost:8000/` in your browser.
+10. To change the port you may run `python manage.py runserver <port_number>`
+11. To run the migrations run: `python manage.py migrate`
+12. You can terminate the process by `Ctrl+C` in your terminal.
 
 Follow the given instructions for Login into the app.
 
@@ -108,7 +110,6 @@ Follow the given instructions for Login into the app.
     }
     ```
 
-
 2. To create the superuser run:
    ```
    python manage.py createsuperuser
@@ -116,14 +117,6 @@ Follow the given instructions for Login into the app.
    Fill up the things it asked to and then Login into the app.
 
 ## Environment Variables
-Use .env.template file to make a new .env file. You can read about environment variables used in this [here](https://github.com/anitab-org/anitab-forms-backend/blob/develop/main/settings.py).
-
-```
-SECRET_KEY=<your-secret-key>
-EMAIL_USER=<your-email-address>
-EMAIL_PASSWORD=<your-api-key>
-```
-
 1. `Zulip API KEY file` - You can go [Zulip](https://anitab-org.zulipchat.com) and follow [these instructions to get your API KEY](https://zulip.com/api/api-keys#get-your-api-key). Download the file and save it in the root folder of the project with the name `download`.
 
 2. `SENDGRID_API_KEY` - It is optional for development. To use this variable make `DEBUG=False` in `settings.py`. Follow the given steps to create a Sendgrid API key:
