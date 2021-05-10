@@ -26,7 +26,7 @@ class TestGoogleAuth(TestCase):
         )
         site = Site.objects.get_current()
         social_app.sites.add(site)
-
+        
     @responses.activate
     def test_google_auth(self):
         """
