@@ -25,9 +25,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "7ibm!g0j@gs7kszwav!6$*lar(+!!l3tpm@09s%csl2bj)l+p4"
+SECRET_KEY = os.environ.get("SECRET_KEY", "development_secret_key")
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -115,7 +114,7 @@ else:
     SENDGRID_SANDBOX_MODE_IN_DEBUG = False
     SENDGRID_ECHO_TO_STDOUT = True
     EMAIL_HOST = "smtp.sendgrid.net"
-    EMAIL_HOST_USER = "apikey"
+    EMAIL_HOST_USER = os.getenv("EMAIL_USER", "apikey")
     EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
@@ -131,12 +130,12 @@ WSGI_APPLICATION = "main.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "osp",
-        "USER": "osp",
-        "PASSWORD": "osp",
-        "HOST": "localhost",  # Change to db for docker-compose
-        "PORT": 5432,
+        "ENGINE": os.environ.get("DB_BACKEND", "django.db.backends.postgresql_psycopg2"),
+        "NAME": os.environ.get("DB_NAME", "osp"),
+        "USER": os.environ.get("DB_USERNAME", "osp"),
+        "PASSWORD": os.environ.get("DB_PASSWORD", "osp"),
+        "HOST": os.environ.get("DB_HOST", "localhost"),  # Change to db for docker-compose
+        "PORT": os.environ.get("DB_PORT", 5432),
     }
 }
 
