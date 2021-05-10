@@ -162,7 +162,7 @@ export SENDGRID_API_KEY=<your-sendgrid-api-key>
 
    ![site_id](https://user-images.githubusercontent.com/56037184/109974910-0fa79b00-7d20-11eb-9826-44fdf6d770f9.png)
    
-   **Note**: After saving this if the site id is not `2` then change the `SITE_ID` in settings.py with the new site id.
+   **Note**: After saving this if the site id is not `1` then change the `SITE_ID` in settings.py with the new site id.
 5. After this go to **Social Applications Dashboard**. (**URL**: http://localhost:8000/admin/socialaccount/socialapp/).
 6. Add the credentials that you get after creating the Google app. Fill in the information as given in the image.
 
