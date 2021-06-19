@@ -6,16 +6,16 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('osp', '0005_auto_20200625_1656'),
+        ("osp", "0005_auto_20200625_1656"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='form',
-            options={'ordering': ['-created_on']},
+            name="form",
+            options={"ordering": ["-created_on"]},
         ),
         migrations.AlterModelOptions(
-            name='question',
-            options={'ordering': ['order']},
+            name="question",
+            options={"ordering": ["order"]},
         ),
     ]

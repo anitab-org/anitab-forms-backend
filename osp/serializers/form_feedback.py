@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
-from osp.models import FormFeedback, Answer, Question
+from osp.models import FormFeedback
 from osp.serializers.form import FormSerializer
 from osp.serializers.user import UserSerializer
-from osp.serializers.answer import AnswerReadSerializer
 from osp.utils.answer_function import get_model_and_serializer
+
 
 class FormFeedbackReadSerializer(serializers.ModelSerializer):
 
@@ -15,20 +15,19 @@ class FormFeedbackReadSerializer(serializers.ModelSerializer):
     class Meta:
 
         model = FormFeedback
-        fields = [
-            'id', 'user', 'form', 'answers', 'acceptance_status'
-        ]
+        fields = "__all__"
 
     def get_answers(self, obj):
         answers = []
         for answer in obj.answers.all():
             value = get_model_and_serializer(answer.question.data_type)
-            serializer = value['serializer']
-            model = value['model']
+            serializer = value["serializer"]
+            model = value["model"]
             instance = model.objects.get(id=answer.id)
             instance = serializer(instance)
             answers.append(instance.data)
         return answers
+
 
 class FormFeedbackWriteSerializer(serializers.ModelSerializer):
 
@@ -37,6 +36,4 @@ class FormFeedbackWriteSerializer(serializers.ModelSerializer):
     class Meta:
 
         model = FormFeedback
-        fields = [
-            'id', 'user', 'form', 'answers', 'acceptance_status'
-        ]
+        fields = "__all__"

@@ -1,0 +1,55 @@
+name: Tests Build
+
+on: [push, pull_request]
+
+jobs:
+
+  build:
+
+    name: Run tests
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_USER: osp
+          POSTGRES_PASSWORD: osp
+          POSTGRES_DB: osp
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+    
+    steps:
+
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    
+    - name: Installing dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install coverage==5.4
+
+    - name: Migrating Test Database
+      run: python manage.py migrate
+
+    - name: Run tests
+      run: coverage run manage.py test
+
+    - name: Generate coverage report
+      run: coverage xml
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        file: ./coverage.xml
+        name: codecov-umbrella
+        fail_ci_if_error: true

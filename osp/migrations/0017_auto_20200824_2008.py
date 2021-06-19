@@ -6,33 +6,33 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('osp', '0016_zulipstat_updated_on'),
+        ("osp", "0016_zulipstat_updated_on"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='zulipstat',
-            name='celebrate_messages',
+            model_name="zulipstat",
+            name="celebrate_messages",
             field=models.BigIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='zulipstat',
-            name='general_messages',
+            model_name="zulipstat",
+            name="general_messages",
             field=models.BigIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='zulipstat',
-            name='newcomers_messages',
+            model_name="zulipstat",
+            name="newcomers_messages",
             field=models.BigIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='zulipstat',
-            name='opportunities_messages',
+            model_name="zulipstat",
+            name="opportunities_messages",
             field=models.BigIntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='zulipstat',
-            name='questions_messages',
+            model_name="zulipstat",
+            name="questions_messages",
             field=models.BigIntegerField(default=0),
         ),
     ]

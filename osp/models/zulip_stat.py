@@ -1,16 +1,12 @@
-from django.conf import settings
-from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 
 from osp.models.user_information import UserInformation
 
+
 class ZulipStat(models.Model):
 
-    user_information = models.OneToOneField(
-        UserInformation,
-        on_delete=models.CASCADE
-    )
+    user_information = models.OneToOneField(UserInformation, on_delete=models.CASCADE)
     zulip_username = models.TextField(blank=True)
     total_messages = models.BigIntegerField(default=0)
     first_activity = models.DateTimeField(default=timezone.now)
@@ -21,5 +17,3 @@ class ZulipStat(models.Model):
     questions_messages = models.BigIntegerField(default=0)
     opportunities_messages = models.BigIntegerField(default=0)
     celebrate_messages = models.BigIntegerField(default=0)
-
-

@@ -1,0 +1,35 @@
+#!/bin/bash
+
+black-check(){
+    black --check --quiet . && echo "Black Check ✅" || {
+        >&2 echo "Black Check ❌"
+        echo "Suggestion: Run - black ."
+        echo ""
+        FAILURE=1
+    }
+}
+
+isort-check(){
+    isort --check -rc --quiet . && echo "Isort Check ✅" || {
+        >&2 echo "Isort Check ❌"
+        echo "Suggestion: Run - isort -rc ."
+        echo ""
+        FAILURE=1
+    }
+}
+
+flake8-check() {
+    flake8 && echo "Flake8 Check ✅" ||{
+        >&2 echo "Flake8 Check ❌"
+        echo "Suggestion: Run - flake8 ."
+        echo ""
+        FAILURE=1
+    }
+}
+
+black-check
+echo ""
+isort-check
+echo ""
+flake8-check
+exit $FAILURE
