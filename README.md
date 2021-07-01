@@ -1,4 +1,4 @@
-# Anitab Forms Backends
+# Anitab Forms Backend
 
 ![Build Status](https://github.com/anitab-org/anitab-forms-backend/workflows/Tests%20Build/badge.svg)
 [![project chat](https://img.shields.io/badge/zulip-join_chat-brightgreen.svg)](https://anitab-org.zulipchat.com/#narrow/stream/237907-open-source-progs)
