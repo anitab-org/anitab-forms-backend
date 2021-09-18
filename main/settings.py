@@ -114,7 +114,7 @@ else:
     SENDGRID_SANDBOX_MODE_IN_DEBUG = False
     SENDGRID_ECHO_TO_STDOUT = True
     EMAIL_HOST = "smtp.sendgrid.net"
-    EMAIL_HOST_USER = "apikey"
+    EMAIL_HOST_USER = os.getenv("EMAIL_USER", "apikey")
     EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
     EMAIL_PORT = 587
     EMAIL_USE_TLS = True
@@ -130,12 +130,12 @@ WSGI_APPLICATION = "main.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "osp",
-        "USER": "osp",
-        "PASSWORD": "osp",
-        "HOST": "localhost",  # Change to db for docker-compose
-        "PORT": 5432,
+        "ENGINE": os.environ.get("DB_BACKEND", "django.db.backends.postgresql_psycopg2"),
+        "NAME": os.environ.get("DB_NAME", "osp"),
+        "USER": os.environ.get("DB_USERNAME", "osp"),
+        "PASSWORD": os.environ.get("DB_PASSWORD", "osp"),
+        "HOST": os.environ.get("DB_HOST", "localhost"),  # Change to db for docker-compose
+        "PORT": os.environ.get("DB_PORT", 5432),
     }
 }
 
