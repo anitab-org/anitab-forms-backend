@@ -9,8 +9,7 @@ Django==3.0.7
 django-cors-headers==3.3.0
 django-sendgrid-v5==0.8.1
 djangorestframework==3.11.0
-djangorestframework-jwt==1.11.0
-djangorestframework-simplejwt==4.4.0
+djangorestframework-simplejwt==4.8.0
 future==0.18.2
 idna==2.10
 isort==4.3.21
@@ -19,7 +18,7 @@ matrix-client==0.3.2
 mccabe==0.6.1
 psycopg2==2.8.5
 pycparser==2.20
-PyJWT==1.7.1
+PyJWT==2.2.0
 pylint==2.5.2
 pyOpenSSL==19.1.0
 python-dotenv==0.13.0
