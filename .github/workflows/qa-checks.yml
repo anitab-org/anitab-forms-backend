@@ -1,4 +1,4 @@
-name: Open Source Programs QA Checks
+name: AnitaB Forms QA Checks
 
 on: [push, pull_request]
 
