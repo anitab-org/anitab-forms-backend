@@ -12,7 +12,7 @@ function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Open Source Programs (OSP), an application to process smaller 4-week or full day programs to contribute to open source projects. Similar to GSoC, Outreachy, or RGSoC. This is the backend app.">
+      description="AnitaB Forms, an application to process smaller 4-week or full day programs to contribute to open source projects. Similar to GSoC, Outreachy, or RGSoC. This is the backend app.">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>

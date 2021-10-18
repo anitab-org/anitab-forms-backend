@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Open Source Programs Backend Docs',
-  tagline: 'Documentation for Open Source Programs Backend',
+  title: 'AnitaB Forms Backend Docs',  
+  tagline: 'Documentation for AnitaB Forms Backend',   
   url: 'https://osp-backend-docs.surge.sh/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -10,7 +10,7 @@ module.exports = {
   projectName: 'osp-backend-docusaurus', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Open Source Programs Backend',
+      title: 'AnitaB Forms Backend',   
       logo: {
         alt: 'AnitaB.org Logo',
         src: 'img/logo.png',
