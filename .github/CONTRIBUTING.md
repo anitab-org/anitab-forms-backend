@@ -1,5 +1,5 @@
 # Contributing Guidelines
-Welcome to contributing in **Open Source Programs**! 
+Welcome to contributing in **AnitaB Forms**! 
 
 - You can join us on [AnitaB.org Open Source Zulip](https://anitab-org.zulipchat.com/). Each active repo has its own stream. OSP stream is [#open-source-progs](https://anitab-org.zulipchat.com/#narrow/stream/237907-open-source-progs).
 - To ensure a safe, positive environment for all contributors, go through the full [Code of Conduct](https://github.com/anitab-org/anitab-forms-backend/blob/develop/CODE_OF_CONDUCT.md)

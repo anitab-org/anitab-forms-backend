@@ -8,7 +8,7 @@
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
 [![codecov](https://codecov.io/gh/anitab-org/anitab-forms-backend/branch/develop/graph/badge.svg)](https://codecov.io/gh/anitab-org/anitab-forms-backend)
 
-Open Source Programs (OSP) is an application that simplifies the processing and selection procedure of Open Source Programs of AnitaB.org Open Source or other third-party programs. This is the Backend repo for OSP.
+AnitaB Forms is an application that simplifies the processing and selection procedure of Open Source Programs of AnitaB.org Open Source or other third-party programs. This is the Backend repo for OSP.
 
 ## Tech Stack
 - Django 3.0.7
@@ -228,4 +228,4 @@ Contributions of any kind welcome!
 You can reach the admins, maintainers and our community on [AnitaB.org Open Source Zulip](https://anitab-org.zulipchat.com/). If you are interested in contributing to the OSP project, you may join the stream [#anitab-forms](https://anitab-org.zulipchat.com/#narrow/stream/237907-open-source-progs) and ask questions or intereact with the community. Join Us!
 
 ## License
-Open Source Programs Backend is licensed under the GNU General Public License v3.0. To know more about it you can read the [LICENSE](LICENSE).
+AnitaB Forms Backend is licensed under the GNU General Public License v3.0. To know more about it you can read the [LICENSE](LICENSE).
