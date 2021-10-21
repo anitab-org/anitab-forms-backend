@@ -1,16 +1,16 @@
 module.exports = {
-  title: 'AnitaB Forms Backend Docs',  
-  tagline: 'Documentation for AnitaB Forms Backend',   
-  url: 'https://osp-backend-docs.surge.sh/',
-  baseUrl: '/',
+  title: 'AnitaB Forms Backend Docs',
+  tagline: 'Documentation for AnitaB Forms Backend',
+  url: 'https://anitab-org.github.io/anitab-forms-backend/',
+  baseUrl: '/anitab-forms-backend/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'AnitaB.org', // Usually your GitHub org/user name.
-  projectName: 'osp-backend-docusaurus', // Usually your repo name.
+  projectName: 'anitab-forms-backend', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'AnitaB Forms Backend',   
+      title: 'AnitaB Forms Backend',
       logo: {
         alt: 'AnitaB.org Logo',
         src: 'img/logo.png',
