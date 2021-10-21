@@ -10,7 +10,7 @@ module.exports = {
   projectName: 'anitab-forms-backend', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'AnitaB Forms Backend',
+      title: 'AnitaB Forms Backend Docs',
       logo: {
         alt: 'AnitaB.org Logo',
         src: 'img/logo.png',
