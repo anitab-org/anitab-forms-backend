@@ -89,14 +89,16 @@ Next follow these instructions.
    ```
    python manage.py migrate
    ```
-8. To run the server:
+8. To setup Social Auth for backend see [this](#Setup-Social-Auth).
+
+9. To run the server:
     ```
     python manage.py runserver
     ```
-9. Navigate to `http://localhost:8000/` in your browser.
-10. To change the port you may run `python manage.py runserver <port_number>`
-11. To run the migrations run: `python manage.py migrate`
-12. You can terminate the process by `Ctrl+C` in your terminal.
+10. Navigate to `http://localhost:8000/` in your browser.
+11. To change the port you may run `python manage.py runserver <port_number>`
+12. To run the migrations run: `python manage.py migrate`
+13. You can terminate the process by `Ctrl+C` in your terminal.
 
 Follow the given instructions for Login into the app.
 
@@ -133,21 +135,39 @@ Add it to your .env file as follows:
 ```
 export SENDGRID_API_KEY=<your-sendgrid-api-key>
 ```
+3. `GOOGLE_CALLBACK_URL` - For using Google authentication the **Callback URL** is required by Google API. Add this env variable in `.env` file or export it to use **Callback URL** which you used while setting Up Google App. The default value is: `http://localhost:3000/login`.
 
-3. `SECRET_KEY`  - This environment variable is required for running the backend. Add `SECRET_KEY` in `.env` file or export it by using `export SECRET_KEY=<YOUR SECRET KEY>`.
+4. `SECRET_KEY`  - This environment variable is required for running the backend. Add `SECRET_KEY` in `.env` file or export it by using `export SECRET_KEY=<YOUR SECRET KEY>`.
 
-4. `DB_BACKEND` - This environment variable is used here to get the the backend class of the database. Different databases have different backends in django. You can read more about it [here](https://docs.djangoproject.com/en/3.1/ref/databases/). Its default backend is postgresql.
+5. `DB_BACKEND` - This environment variable is used here to get the the backend class of the database. Different databases have different backends in django. You can read more about it [here](https://docs.djangoproject.com/en/3.1/ref/databases/). Its default backend is postgresql.
 
-5. `DB_NAME` - This environment variable is required to get the name of the database. By default, its value is `osp`.
+6. `DB_NAME` - This environment variable is required to get the name of the database. By default, its value is `osp`.
 
-6. `DB_USERNAME` - This environment variable is required to get the **USERNAME** of the user with all privileges to the above mentioned database.
+7. `DB_USERNAME` - This environment variable is required to get the **USERNAME** of the user with all privileges to the above mentioned database.
 
-7. `DB_PASSWORD` - This environment variable is required to get the **password** of the above mentioned user i.e. the user with all the privileges to the database.
+8. `DB_PASSWORD` - This environment variable is required to get the **password** of the above mentioned user i.e. the user with all the privileges to the database.
 
-8. `DB_HOST` - It is used to get the database host from the env variables. For `docker` it must be set to `db` otherwise its default value is `localhost`.
+9. `DB_HOST` - It is used to get the database host from the env variables. For `docker` it must be set to `db` otherwise its default value is `localhost`.
 
-9. `DB_PORT` - It is used to get the database port from the env variables. Different database backends have different ports. Its default value is of postgresql port i.e. `5432`.
+10. `DB_PORT` - It is used to get the database port from the env variables. Different database backends have different ports. Its default value is of postgresql port i.e. `5432`.
 
+
+
+# Setup Social Auth
+
+1. Create a Super User by running this command: `python manage.py createsuperuser`.
+2. Login to [Django admin site](http://localhost:8000/admin/) using credentials of the previous step.
+3. Go to **Sites dashboard** in admin site. (**URL**: http://localhost:8000/admin/sites/site/).
+4. Click on `Add site` button and fill in the information as given in the image.
+
+   ![site_id](https://user-images.githubusercontent.com/56037184/109974910-0fa79b00-7d20-11eb-9826-44fdf6d770f9.png)
+   
+   **Note**: After saving this if the site id is not `1` then change the `SITE_ID` in settings.py with the new site id.
+5. After this go to **Social Applications Dashboard**. (**URL**: http://localhost:8000/admin/socialaccount/socialapp/).
+6. Add the credentials that you get after creating the Google app. Fill in the information as given in the image.
+
+   ![social_add](https://user-images.githubusercontent.com/44670961/110095166-9f058a80-7dc2-11eb-85eb-afb109f46663.png)
+   **For creating Google App & Creating ClientId & Client Secret see [this docs](https://developers.google.com/adwords/api/docs/guides/authentication#create_a_client_id_and_client_secret).**
 ## Testing
 
 To run the tests run: `python manage.py test`.
